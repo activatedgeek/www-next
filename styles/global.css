@@ -1,0 +1,32 @@
+@tailwind base;
+@layer base {
+  summary {
+    @apply cursor-pointer;
+  }
+  figcaption {
+    @apply text-center;
+  }
+  img {
+    @apply mx-auto rounded shadow-lg;
+  }
+  a {
+    /** @TODO: Resolve this using utility classes instead. */
+    color: #3b82f6 !important;
+    font-weight: normal !important;
+  }
+  p.hint {
+    @apply p-4 rounded bg-gray-200 prose prose-sm sm:prose lg:prose-lg xl:prose-xl sm:text-sm lg:text-lg xl:text-xl;
+  }
+  p.hint.tip {
+    @apply bg-green-200;
+  }
+  p.hint.warn {
+    @apply bg-yellow-200;
+  }
+  p.hint.error {
+    @apply bg-red-200;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
