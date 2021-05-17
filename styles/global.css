@@ -14,6 +14,7 @@
     color: #3b82f6 !important;
     font-weight: normal !important;
   }
+  /* purgecss start ignore */
   p.hint {
     @apply p-4 rounded bg-gray-200 prose prose-sm sm:prose lg:prose-lg xl:prose-xl sm:text-sm lg:text-lg xl:text-xl;
   }
@@ -26,6 +27,7 @@
   p.hint.error {
     @apply bg-red-200;
   }
+  /* purgecss end ignore */
 }
 
 @tailwind components;

@@ -8,7 +8,7 @@ module.exports = {
       "./pages/**/*.{js,ts,jsx,tsx}",
     ],
     options: {
-      whitelist: ["hidden", "tip", "warn", "error"],
+      whitelist: [],
     },
   },
   darkMode: false, // or 'media' or 'class'
