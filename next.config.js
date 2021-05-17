@@ -5,6 +5,7 @@ if (process.env.NEXT_KB_DIR === undefined) {
 module.exports = {
   serverRuntimeConfig: {
     siteDir: process.env.NEXT_KB_DIR,
+    libraryThingUserId: process.env.LIBRARYTHING_USERID,
   },
   publicRuntimeConfig: {
     siteUrl:

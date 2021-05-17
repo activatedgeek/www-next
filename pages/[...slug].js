@@ -1,5 +1,5 @@
 import { getAllPages, getPageByURI } from "../lib/pages"
-import MDXPage from "../components/mdx-page"
+import { MDXPage } from "../components/single-page"
 
 export default MDXPage
 
