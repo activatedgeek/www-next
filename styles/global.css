@@ -27,6 +27,9 @@
   p.hint.error {
     @apply bg-red-200;
   }
+  div.footnotes hr {
+    @apply my-4;
+  }
   /* purgecss end ignore */
 }
 

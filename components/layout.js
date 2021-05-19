@@ -38,7 +38,7 @@ const IconLink = ({ title, icon, href, color }) => (
 
 const Header = () => {
   return (
-    <div className="mx-auto flex justify-between bg-white sticky top-0 px-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl border-b">
+    <div className="opacity-95 mx-auto flex justify-between bg-white sticky top-0 px-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl border-b-2">
       <Link href="/">
         <a className="cursor-pointer">
           <Image src="/sk.svg" width={70} height={70} className="shadow-none" />
@@ -66,8 +66,8 @@ const Footer = () => {
     social: { scholar, github, yc, linkedin, stackoverflow, twitter, code },
   } = getConfig()
   return (
-    <>
-      <div className="flex my-2 justify-center text-xl">
+    <div className="mx-auto border-t-2 border-gray-300 p-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl">
+      <div className="flex justify-center text-xl">
         <IconLink
           title="Semantic Scholar"
           icon={faUserGraduate}
@@ -111,7 +111,7 @@ const Footer = () => {
           © {new Date().getFullYear()} {author}
         </p>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -175,9 +175,8 @@ const Layout = ({
         <div className="mx-auto prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
           {children}
         </div>
-        <div className="border-b my-6 border-gray-300" />
-        <Footer />
       </div>
+      <Footer />
     </>
   )
 }
