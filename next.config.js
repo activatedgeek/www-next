@@ -40,7 +40,7 @@ module.exports = {
   publicRuntimeConfig: {
     siteUrl:
       process.env.NODE_ENV === "production"
-        ? "https://next.perhapsbay.es"
+        ? "https://im.perhapsbay.es"
         : "http://localhost:3000",
     author: "Sanyam Kapoor",
     social: {
