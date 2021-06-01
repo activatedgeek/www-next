@@ -16,7 +16,7 @@
   }
   /* purgecss start ignore */
   p.hint {
-    @apply p-4 rounded bg-gray-200 prose prose-sm sm:prose lg:prose-lg xl:prose-xl sm:text-sm lg:text-lg xl:text-xl;
+    @apply p-4 rounded bg-gray-200 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;
   }
   p.hint.tip {
     @apply bg-green-200;
