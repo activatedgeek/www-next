@@ -44,7 +44,7 @@ module.exports = {
         : "http://localhost:3000",
     author: "Sanyam Kapoor",
     social: {
-      scholar: "https://u.perhapsbay.es/pubs",
+      scholar: "https://perhapsbay.es/pubs",
       github: "https://github.com/activatedgeek",
       yc: "https://news.ycombinator.com/user?id=activatedgeek",
       linkedin: "https://www.linkedin.com/in/sanyamkapoor",

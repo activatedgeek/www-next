@@ -38,7 +38,7 @@ const IconLink = ({ title, icon, href, color }) => (
 
 const Header = () => {
   return (
-    <div className="opacity-95 mx-auto flex justify-between bg-white sticky top-0 px-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl border-b-2">
+    <div className="z-10 opacity-95 mx-auto flex justify-between bg-white sticky top-0 px-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl border-b-2">
       <Link href="/">
         <a className="cursor-pointer">
           <Image src="/sk.svg" width={70} height={70} className="shadow-none" />

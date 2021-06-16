@@ -7,12 +7,15 @@
     @apply text-center;
   }
   img {
-    @apply mx-auto rounded shadow-lg;
+    @apply mx-auto rounded shadow-md;
   }
   a {
     /** @TODO: Resolve this using utility classes instead. */
     color: #3b82f6 !important;
     font-weight: normal !important;
+  }
+  summary {
+    @apply border rounded shadow-sm py-2 px-4;
   }
   /* purgecss start ignore */
   p.hint {
