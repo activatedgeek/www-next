@@ -10,7 +10,7 @@ export default function AreaLink({ area, category }) {
       {catLabel} in{" "}
       <Link href={`/kb/${area}-overview`}>
         <a
-          className={`inline-block mx-2 px-3 rounded-lg shadow-md ${areaColor} no-underline text-white`}
+          className={`inline-block mx-1 px-2 rounded-lg shadow-md ${areaColor} no-underline text-white`}
         >
           {emoji.get(emoji_code)} {area}
         </a>
