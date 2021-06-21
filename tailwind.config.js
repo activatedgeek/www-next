@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   // @NOTE https://github.com/tailwindlabs/tailwindcss-typography/issues/26.
   important: true,
@@ -13,7 +15,12 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        serif: ['"Lora"', ...defaultTheme.fontFamily.serif],
+        sans: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   variants: {
     extend: {},

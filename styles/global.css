@@ -1,21 +1,28 @@
 @tailwind base;
 @layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif;
+  }
+  p {
+    @apply font-sans;
+  }
   summary {
-    @apply cursor-pointer;
+    @apply font-sans cursor-pointer border rounded shadow-sm py-2 px-4;
   }
   figcaption {
-    @apply text-center;
+    @apply font-sans text-center;
   }
   img {
     @apply mx-auto rounded shadow-md;
   }
   a {
     /** @TODO: Resolve this using utility classes instead. */
+    @apply font-sans;
     color: #3b82f6 !important;
     font-weight: normal !important;
-  }
-  summary {
-    @apply border rounded shadow-sm py-2 px-4;
   }
   /* purgecss start ignore */
   p.hint {
