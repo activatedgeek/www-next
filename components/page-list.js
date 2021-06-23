@@ -5,7 +5,7 @@ import AreaLink from "./area-link"
 export default function PageList({ title, pages }) {
   return (
     <>
-      <h2>{title || "Pages"}</h2>
+      {title ? <h2>{title}</h2> : null}
       <table>
         <tbody>
           {pages.map(({ title: _t, uri, area, cat, last_updated }, _i) => (
