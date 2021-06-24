@@ -10,7 +10,7 @@
     @apply font-sans;
   }
   summary {
-    @apply font-sans cursor-pointer border rounded shadow-sm py-2 px-4;
+    @apply font-sans cursor-pointer inline-block border rounded shadow-sm py-2 px-4;
   }
   figcaption {
     @apply font-sans text-center;
@@ -25,6 +25,12 @@
     font-weight: normal !important;
   }
   /* purgecss start ignore */
+  div.math-display {
+    @apply overflow-auto;
+  }
+  nav.toc {
+    @apply md:inline-block md:float-right md:w-1/2 md:ml-6 my-4 rounded shadow-sm p-6 bg-gradient-to-br from-gray-50 to-blue-50 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;
+  }
   p.hint {
     @apply p-4 rounded bg-gray-200 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;
   }
