@@ -45,7 +45,7 @@ export default function BooksLibrary({ frontmatter, books }) {
               <tr key={isbn}>
                 <td>{year}</td>
                 <td>
-                  <a href={`https://www.librarything.com/search.php?search=${encodeURIComponent(title)}`} target="_blank" rel="noopener noreferred">{title}</a>
+                  <a href={`https://www.librarything.com/search.php?search=${encodeURIComponent(title)}`} target="_blank" rel="noopener noreferrer">{title}</a>
                   <Rating value={rating} />
                 </td>
                 <td>

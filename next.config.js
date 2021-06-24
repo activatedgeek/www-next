@@ -33,6 +33,9 @@ async function getAllPages() {
 }
 
 module.exports = {
+  eslint: {
+    dirs: ["components", "lib", "pages"],
+  },
   serverRuntimeConfig: {
     siteDir: process.env.NEXT_KB_DIR,
     libraryThingUserId: process.env.LIBRARYTHING_USERID,

@@ -3,10 +3,11 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "fmt": "prettier --write \"{components,lib,pages,styles}/*.{js,css}\" *.config.js"
+    "dev": "next dev",
+    "fmt": "prettier --write \"{components,lib,pages,styles}/*.{js,css}\" *.config.js",
+    "lint": "next lint",
+    "start": "next start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -22,6 +23,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
+    "eslint": "^7.29.0",
+    "eslint-config-next": "^11.0.1",
     "github-slugger": "^1.3.0",
     "globby": "^11.0.3",
     "gray-matter": "^4.0.3",

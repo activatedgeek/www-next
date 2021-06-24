@@ -1,3 +1,4 @@
+import Script from "next/script"
 import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
@@ -42,7 +43,13 @@ const Header = () => {
     <div className="z-10 opacity-95 mx-auto flex justify-between bg-white sticky top-0 px-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl border-b-2">
       <Link href="/">
         <a className="cursor-pointer">
-          <Image src="/sk.svg" width={70} height={70} className="shadow-none" />
+          <Image
+            src="/sk.svg"
+            alt="SK Logo"
+            width={70}
+            height={70}
+            className="shadow-none"
+          />
         </a>
       </Link>
       <div className="flex items-center">
@@ -171,12 +178,6 @@ const Layout = ({
         {description ? (
           <meta name="twitter:description" content={description} />
         ) : null}
-
-        <script
-          data-goatcounter={`https://${gcCode}.goatcounter.com/count`}
-          async
-          src="//gc.zgo.at/count.js"
-        />
       </Head>
       <Header />
       <div className="mx-auto px-4 py-5 max-w-3xl sm:px-6 sm:py-6 lg:max-w-4xl lg:py-8 lg:px-8 xl:max-w-6xl">
@@ -185,6 +186,11 @@ const Layout = ({
         </div>
       </div>
       <Footer />
+      <Script
+        data-goatcounter={`https://${gcCode}.goatcounter.com/count`}
+        async
+        src="//gc.zgo.at/count.js"
+      />
     </>
   )
 }
