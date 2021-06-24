@@ -1,4 +1,3 @@
-import Script from "next/script"
 import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
@@ -132,7 +131,6 @@ const Layout = ({
     siteUrl,
     author,
     social: { twitter },
-    gcCode,
   } = getConfig()
   return (
     <>
@@ -141,14 +139,7 @@ const Layout = ({
           {title} | {author}
         </title>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
-          rel="stylesheet"
-        />
-
         <link rel="canonical" href={`${siteUrl}${uri}`} />
-        <link rel="icon" href={`${siteUrl}/favicon.svg`} />
 
         {description ? <meta name="description" content={description} /> : null}
 
@@ -186,11 +177,6 @@ const Layout = ({
         </div>
       </div>
       <Footer />
-      <Script
-        data-goatcounter={`https://${gcCode}.goatcounter.com/count`}
-        async
-        src="//gc.zgo.at/count.js"
-      />
     </>
   )
 }
