@@ -29,7 +29,7 @@
     @apply overflow-auto;
   }
   nav.toc {
-    @apply md:inline-block md:float-right md:w-1/2 md:ml-6 my-4 rounded shadow-sm p-6 bg-gradient-to-br from-gray-50 to-blue-50 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;
+    @apply md:inline-block md:float-right md:w-1/2 md:ml-6 my-4 rounded shadow-sm p-6 bg-gradient-to-bl from-gray-50 to-blue-50 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;
   }
   p.hint {
     @apply p-4 rounded bg-gray-200 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;
@@ -45,6 +45,11 @@
   }
   div.footnotes hr {
     @apply my-4;
+  }
+  iframe.tweet {
+    @apply w-full mx-auto h-auto;
+    max-width: 550px;
+    min-height: 50vh;
   }
   /* purgecss end ignore */
 }
