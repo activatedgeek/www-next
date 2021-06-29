@@ -28,8 +28,14 @@
   div.math-display {
     @apply overflow-auto;
   }
+  div.toc-container {
+    @apply md:absolute md:h-full md:-right-53 md:w-1/2 md:mt-0 mt-4;
+  }
   nav.toc {
-    @apply md:inline-block md:float-right md:w-1/2 md:ml-6 my-4 rounded shadow-sm p-6 bg-gradient-to-bl from-gray-50 to-blue-50 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;
+    @apply md:sticky md:top-0 md:overflow-y-auto md:max-h-3/4 rounded shadow-sm p-6 bg-gradient-to-bl from-gray-50 to-blue-50 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;
+  }
+  nav.toc > h3 {
+    @apply md:z-10 md:sticky md:top-0 md:bg-gradient-to-bl md:from-gray-50 md:to-blue-50 shadow-sm;
   }
   p.hint {
     @apply p-4 rounded bg-gray-200 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;

@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "next lint && next build",
     "dev": "next dev",
     "fmt": "prettier --write \"{components,lib,pages,styles}/*.{js,css}\" *.config.js",
     "lint": "next lint",

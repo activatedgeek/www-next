@@ -16,6 +16,12 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      maxHeight: {
+        "3/4": "75vh",
+      },
+      inset: {
+        "-53": "-53%",
+      },
       fontFamily: {
         serif: ['"Lora"', ...defaultTheme.fontFamily.serif],
         sans: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
