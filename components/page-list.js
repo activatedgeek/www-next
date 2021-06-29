@@ -10,7 +10,7 @@ export default function PageList({ title, pages }) {
         <tbody>
           {pages.map(({ title: _t, uri, area, cat, last_updated }, _i) => (
             <tr key={_i}>
-              <td>
+              <td className="w-24 md:w-32">
                 <span className="text-gray-500">
                   {format(new Date(last_updated), "MMM d, yyyy")}
                 </span>
