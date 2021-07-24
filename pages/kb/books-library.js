@@ -1,30 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons"
-
 import { getServerConfig } from "../../lib/next-config"
 import getAllBooks from "../../lib/librarything"
 import SinglePage from "../../components/single-page"
+import Rating from "../../components/rating"
 
-const Rating = ({ value }) => {
-  const rating = Math.floor(value)
-  return (
-    <div className="block overflow-hidden">
-      {Array.apply(0, Array(rating)).map((_, i) => (
-        <FontAwesomeIcon
-          key={i}
-          icon={faStar}
-          className="text-yellow-400"
-        />
-      ))}
-      {value > rating ? (
-        <FontAwesomeIcon
-          icon={faStarHalf}
-          className="text-yellow-400"
-        />
-      ) : null}
-    </div>
-  )
-}
 
 export default function BooksLibrary({ frontmatter, books }) {
   return (
@@ -51,7 +29,6 @@ export default function BooksLibrary({ frontmatter, books }) {
                 <td>
                 <i>{author}</i>
                 </td>
-                <td></td>
               </tr>
             ))
           }

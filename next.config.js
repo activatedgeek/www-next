@@ -39,6 +39,8 @@ module.exports = {
   serverRuntimeConfig: {
     siteDir: process.env.NEXT_KB_DIR,
     libraryThingUserId: process.env.LIBRARYTHING_USERID,
+    tmdbApiKey: process.env.TMDB_API_KEY,
+    tmdbSessionId: process.env.TMDB_SESSION_ID,
   },
   publicRuntimeConfig: {
     siteUrl:
