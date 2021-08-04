@@ -49,6 +49,9 @@
   p.hint.error {
     @apply bg-red-200;
   }
+  div.footnotes {
+    @apply sm:text-xs md:text-base;
+  }
   div.footnotes hr {
     @apply my-4;
   }
