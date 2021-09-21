@@ -19,12 +19,15 @@ export default function BooksLibrary({ frontmatter, books }) {
             <th>Author</th>
           </tr>
           {
-            books.map(({ isbn, year, title, author, rating }) => (
+            books.map(({ isbn, year, cover, title, author, rating }) => (
               <tr key={isbn}>
                 <td>{year}</td>
-                <td>
+                <td className="flex items-center">
+                  <img className="inline m-0 mr-3" src={cover} alt={title} width={50} height={66} />
+                  <div>
                   <a href={`https://www.librarything.com/search.php?search=${encodeURIComponent(title)}`} target="_blank" rel="noopener noreferrer">{title}</a>
                   <Rating value={rating} />
+                  </div>
                 </td>
                 <td>
                 <i>{author}</i>

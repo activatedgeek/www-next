@@ -33,6 +33,9 @@ async function getAllPages() {
 }
 
 module.exports = {
+  images: {
+    domains: ["images-na.ssl-images-amazon.com", "pics.cdn.librarything.com"],
+  },
   eslint: {
     dirs: ["components", "lib", "pages"],
   },
