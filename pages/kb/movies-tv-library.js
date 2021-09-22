@@ -28,11 +28,14 @@ export default function MoviesLibrary({ frontmatter, movies, tv }) {
             <th>Title</th>
           </tr>
           {
-            movies.map(({ id, release_date, title }) => (
+            movies.map(({ id, release_date, title, poster_path }) => (
               <tr key={id}>
                 <td>{format(new Date(release_date), "yyyy")}</td>
-                <td className="w-9/12">
-                  <a href={`https://www.themoviedb.org/movie/${id}`} target="_blank" rel="noopener noreferrer">{title}</a>
+                <td className="inline-flex items-center">
+                  <a href={`https://www.themoviedb.org/movie/${id}`} target="_blank" rel="noopener noreferrer">
+                    <img className="inline m-0 mr-3" src={`https://www.themoviedb.org/t/p/w150_and_h225_bestv2${poster_path}`} alt={title} width={50} height={66} loading="lazy" />
+                    {title}
+                  </a>
                 </td>
               </tr>              
             ))
@@ -47,13 +50,16 @@ export default function MoviesLibrary({ frontmatter, movies, tv }) {
             <th>Title</th>
           </tr>
           {
-            tv.map(({ id, first_air_date, name }) => (
+            tv.map(({ id, first_air_date, name, poster_path }) => (
               <tr key={id}>
                 <td>{format(new Date(first_air_date), "yyyy")}</td>
-                <td className="w-9/12">
-                  <a href={`https://www.themoviedb.org/tv/${id}`} target="_blank" rel="noopener noreferrer">{name}</a>
+                <td className="inline-flex items-center">
+                  <img className="inline m-0 mr-3" src={`https://www.themoviedb.org/t/p/w150_and_h225_bestv2${poster_path}`} alt={name} width={50} height={66} loading="lazy" />
+                  <a href={`https://www.themoviedb.org/tv/${id}`} target="_blank" rel="noopener noreferrer">
+                    {name}
+                  </a>
                 </td>
-              </tr>            
+              </tr>
             ))
           }
         </tbody>

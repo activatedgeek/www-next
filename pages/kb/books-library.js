@@ -23,8 +23,8 @@ export default function BooksLibrary({ frontmatter, books }) {
               <tr key={isbn}>
                 <td>{year}</td>
                 <td className="flex items-center">
-                  <img className="inline m-0 mr-3" src={cover} alt={title} width={50} height={66} />
-                  <div>
+                  <img className="inline-block m-0" src={cover} alt={title} width={50} height={66} loading="lazy" />
+                  <div className="border-box pl-3">
                   <a href={`https://www.librarything.com/search.php?search=${encodeURIComponent(title)}`} target="_blank" rel="noopener noreferrer">{title}</a>
                   <Rating value={rating} />
                   </div>
