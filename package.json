@@ -5,7 +5,7 @@
   "scripts": {
     "build": "next lint && next build",
     "dev": "next dev",
-    "fmt": "prettier --write \"{components,lib,pages,styles}/*.{js,css}\" *.config.js",
+    "fmt": "prettier --write \"{components,lib,pages,styles}/**/*.{js,css}\" *.config.js",
     "lint": "next lint",
     "start": "next start"
   },
