@@ -48,11 +48,11 @@ module.exports = {
   publicRuntimeConfig: {
     siteUrl:
       process.env.NODE_ENV === "production"
-        ? "https://im.perhapsbay.es"
+        ? "https://sanyamkapoor.com"
         : "http://localhost:3000",
     author: "Sanyam Kapoor",
     social: {
-      scholar: "https://perhapsbay.es/pubs",
+      scholar: "https://go.sanyamkapoor.com/pubs",
       github: "https://github.com/activatedgeek",
       yc: "https://news.ycombinator.com/user?id=activatedgeek",
       linkedin: "https://www.linkedin.com/in/sanyamkapoor",
