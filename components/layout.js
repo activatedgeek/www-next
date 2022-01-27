@@ -39,7 +39,7 @@ const IconLink = ({ title, icon, href, color }) => (
 
 const Header = () => {
   return (
-    <div className="z-10 opacity-95 flex justify-between bg-white top-0 px-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl border-b-2">
+    <div className="mx-auto z-10 opacity-95 flex justify-between bg-white top-0 px-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl border-b-2">
       <Link href="/">
         <a className="cursor-pointer">
           <Image
@@ -73,7 +73,7 @@ const Footer = () => {
     social: { scholar, github, yc, linkedin, stackoverflow, twitter, code },
   } = getConfig()
   return (
-    <div className="mt-6 border-t-2 border-gray-300 p-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl">
+    <div className="mx-auto mt-6 border-t-2 border-gray-300 p-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl">
       <div className="flex justify-center text-xl">
         <IconLink title="Archive" icon={faArchive} href="/db" />
         <IconLink
@@ -171,8 +171,8 @@ const Layout = ({
         ) : null}
       </Head>
       <Header />
-      <div className="px-4 py-5 max-w-3xl sm:px-6 sm:py-6 lg:max-w-4xl lg:py-8 lg:px-8 xl:max-w-6xl">
-        <div className="relative prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl">
+      <div className="mx-auto px-4 py-5 max-w-3xl sm:px-6 sm:py-6 lg:max-w-4xl lg:py-8 lg:px-8 xl:max-w-6xl">
+        <div className="mx-auto relative prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl">
           {children}
         </div>
       </div>
