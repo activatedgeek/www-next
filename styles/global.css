@@ -1,67 +1,61 @@
 @tailwind base;
-@layer base {
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply font-serif;
-  }
-  p {
-    @apply font-sans;
-  }
-  summary {
-    @apply font-sans cursor-pointer inline-block border rounded shadow-sm py-2 px-4;
-  }
-  figcaption {
-    @apply font-sans text-center;
-  }
-  img {
-    @apply mx-auto rounded shadow-md;
-  }
-  a {
-    /** @TODO: Resolve this using utility classes instead. */
-    @apply font-sans;
-    color: #3b82f6 !important;
-    font-weight: normal !important;
-  }
-  /* purgecss start ignore */
-  div.math-display {
-    @apply overflow-auto;
-  }
-  div.toc-container {
-    @apply md:absolute md:h-full md:-right-53 md:w-1/2 md:mt-0 mt-4;
-  }
-  nav.toc {
-    @apply md:sticky md:top-0 md:overflow-y-auto md:max-h-3/4 rounded shadow-sm p-6 bg-gradient-to-bl from-gray-50 to-blue-50 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;
-  }
-  nav.toc > h3 {
-    @apply md:z-10 md:sticky md:top-0 md:bg-gradient-to-bl md:from-gray-50 md:to-blue-50 shadow-sm;
-  }
-  p.hint {
-    @apply p-4 rounded bg-gray-200 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;
-  }
-  p.hint.tip {
-    @apply bg-green-200;
-  }
-  p.hint.warn {
-    @apply bg-yellow-200;
-  }
-  p.hint.error {
-    @apply bg-red-200;
-  }
-  div.footnotes {
-    @apply sm:text-xs md:text-base;
-  }
-  div.footnotes hr {
-    @apply my-4;
-  }
-  iframe.tweet {
-    @apply w-full mx-auto h-auto;
-    max-width: 550px;
-    min-height: 50vh;
-  }
-  /* purgecss end ignore */
-}
-
 @tailwind components;
 @tailwind utilities;
+
+/* FIXME: @layer base {} */
+h1,
+h2,
+h3,
+h4 {
+  @apply font-serif;
+}
+p {
+  @apply font-sans;
+}
+summary {
+  @apply font-sans cursor-pointer inline-block border rounded shadow-sm py-2 px-4;
+}
+figcaption {
+  @apply font-sans text-center;
+}
+img {
+  @apply mx-auto rounded shadow-md;
+}
+a {
+  /** @TODO: Resolve this using utility classes instead. */
+  @apply font-sans !text-blue-500;
+}
+/* purgecss start ignore */
+div.math-display {
+  @apply overflow-auto;
+}
+/* div.toc-container {
+  @apply md:absolute md:h-full md:-right-53 md:w-1/2 md:mt-0 mt-4;
+}
+nav.toc {
+  @apply md:sticky md:top-0 md:overflow-y-auto md:max-h-3/4 rounded shadow-sm p-6 bg-gradient-to-bl from-gray-50 to-blue-50 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;
+}
+nav.toc > h3 {
+  @apply md:z-10 md:sticky md:top-0 md:bg-gradient-to-bl md:from-gray-50 md:to-blue-50 shadow-sm;
+} */
+p.hint {
+  @apply p-4 rounded bg-gray-200 prose sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:text-sm lg:text-lg xl:text-xl;
+}
+p.hint.tip {
+  @apply bg-green-200;
+}
+p.hint.warn {
+  @apply bg-yellow-200;
+}
+p.hint.error {
+  @apply bg-red-200;
+}
+iframe.tweet {
+  @apply w-full mx-auto h-auto;
+  max-width: 550px;
+  min-height: 50vh;
+}
+section.footnotes {
+  @apply border-t-1 border-gray-300 sm:text-xs md:text-base;
+}
+/* purgecss end ignore */  

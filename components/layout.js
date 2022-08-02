@@ -132,12 +132,11 @@ const Layout = ({
     author,
     social: { twitter },
   } = getConfig()
+  const full_title = `${title} | ${author}`;
   return (
     <>
       <Head>
-        <title>
-          {title} | {author}
-        </title>
+        <title>{full_title}</title>
 
         <link rel="canonical" href={`${siteUrl}${uri}`} />
 
