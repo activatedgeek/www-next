@@ -7,23 +7,6 @@ import { getFavoriteMovies, getFavoriteTv } from "../../lib/tmdb"
 export default function MoviesLibrary({ frontmatter, movies, tv }) {
   return (
     <SinglePage frontmatter={frontmatter}>
-      <div className="toc-container">
-        <nav className="toc">
-          <h3>Table of Contents</h3>
-          <ul className="toc-level toc-level-1">
-            <li className="toc-item toc-item-h2">
-              <a className="toc-link toc-link-h2" href="#movies">
-                Movies
-              </a>
-            </li>
-            <li className="toc-item toc-item-h2">
-              <a className="toc-link toc-link-h2" href="#tv">
-                TV
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
       <p>My library of favorites, fetched from my account at TMDb.</p>
       <h2 id="movies">Movies</h2>
       <div className="flex flex-row flex-wrap items-center">
@@ -34,14 +17,19 @@ export default function MoviesLibrary({ frontmatter, movies, tv }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                className="inline-block m-3"
-                src={`https://www.themoviedb.org/t/p/w150_and_h225_bestv2${poster_path}`}
-                alt={title}
-                width={100}
-                height={150}
-                loading="lazy"
-              />
+              <picture>
+                <source
+                  srcSet={`https://www.themoviedb.org/t/p/w150_and_h225_bestv2${poster_path}`}
+                />
+                <img
+                  className="inline-block m-3"
+                  src={`https://www.themoviedb.org/t/p/w150_and_h225_bestv2${poster_path}`}
+                  alt={title}
+                  width={100}
+                  height={150}
+                  loading="lazy"
+                />
+              </picture>
             </a>
             <span>({format(new Date(release_date), "yyyy")})</span>
           </div>
@@ -56,14 +44,19 @@ export default function MoviesLibrary({ frontmatter, movies, tv }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                className="inline m-3"
-                src={`https://www.themoviedb.org/t/p/w150_and_h225_bestv2${poster_path}`}
-                alt={name}
-                width={100}
-                height={150}
-                loading="lazy"
-              />
+              <picture>
+                <source
+                  srcSet={`https://www.themoviedb.org/t/p/w150_and_h225_bestv2${poster_path}`}
+                />
+                <img
+                  className="inline m-3"
+                  src={`https://www.themoviedb.org/t/p/w150_and_h225_bestv2${poster_path}`}
+                  alt={name}
+                  width={100}
+                  height={150}
+                  loading="lazy"
+                />
+              </picture>
             </a>
             <span>({format(new Date(first_air_date), "yyyy")})</span>
           </div>

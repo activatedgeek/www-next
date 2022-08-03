@@ -17,14 +17,17 @@ export default function BooksLibrary({ frontmatter, books }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                className="inline-block m-3"
-                src={cover}
-                alt={title}
-                width={150}
-                height={300}
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={cover} />
+                <img
+                  className="inline-block m-3"
+                  src={cover}
+                  alt={title}
+                  width={150}
+                  height={300}
+                  loading="lazy"
+                />
+              </picture>
             </a>
             <Rating value={rating} />
             <span>({year})</span>
