@@ -132,7 +132,7 @@ const Layout = ({
     author,
     social: { twitter },
   } = getConfig()
-  const full_title = `${title} | ${author}`;
+  const full_title = `${title} | ${author}`
   return (
     <>
       <Head>

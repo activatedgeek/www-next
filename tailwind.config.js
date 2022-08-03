@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       borderWidth: {
-        "1": "1px",
+        1: "1px",
       },
       maxHeight: {
         "3/4": "75vh",
