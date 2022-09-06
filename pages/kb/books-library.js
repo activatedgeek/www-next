@@ -40,7 +40,7 @@ export default function BooksLibrary({ frontmatter, books }) {
 
 export async function getStaticProps() {
   const { libraryThingUserId: userid } = getServerConfig()
-  const books = await getAllBooks({ userid, count: 100 })
+  const books = await getAllBooks({ userid, count: 200 })
 
   return {
     props: {
