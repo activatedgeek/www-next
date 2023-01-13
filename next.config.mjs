@@ -1,7 +1,7 @@
-const globby = require("globby")
-const fs = require("fs/promises")
-const matter = require("gray-matter")
-const GithubSlugger = require("github-slugger")
+import { globby } from "globby"
+import fs from "fs/promises"
+import matter from "gray-matter"
+import GithubSlugger from "github-slugger"
 
 if (process.env.NEXT_KB_DIR === undefined) {
   throw new Error("Missing NEXT_KB_DIR environment variable.")
@@ -32,7 +32,7 @@ async function getAllPages() {
   )
 }
 
-module.exports = {
+export default {
   images: {
     domains: ["images-na.ssl-images-amazon.com", "pics.cdn.librarything.com"],
   },

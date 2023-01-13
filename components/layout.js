@@ -40,27 +40,21 @@ const IconLink = ({ title, icon, href, color }) => (
 const Header = () => {
   return (
     <div className="mx-auto z-10 opacity-95 flex justify-between bg-white top-0 px-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl border-b-2">
-      <Link href="/">
-        <a className="cursor-pointer">
-          <Image
-            src="/sk.svg"
-            alt="SK Logo"
-            width={70}
-            height={70}
-            className="shadow-none"
-          />
-        </a>
+      <Link className="cursor-pointer" href="/">
+        <Image
+          src="/sk.svg"
+          alt="SK Logo"
+          width={70}
+          height={70}
+          className="shadow-none"
+        />
       </Link>
       <div className="flex items-center">
-        <Link href="/kb">
-          <a className="mx-4">
-            <FontAwesomeIcon icon={faBrain} /> kBayes
-          </a>
+        <Link className="mx-4" href="/kb">
+          <FontAwesomeIcon icon={faBrain} /> kBayes
         </Link>
-        <Link href="/">
-          <a className="mx-4">
-            <FontAwesomeIcon icon={faHome} /> Home
-          </a>
+        <Link className="mx-4" href="/">
+          <FontAwesomeIcon icon={faHome} /> Home
         </Link>
       </div>
     </div>

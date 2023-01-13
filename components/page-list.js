@@ -16,8 +16,8 @@ export default function PageList({ title, pages }) {
                 </span>
               </td>
               <td>
-                <Link href={uri}>
-                  <a className="mr-3">{_t}</a>
+                <Link className="mr-3" href={uri}>
+                  {_t}
                 </Link>
                 <AreaLink area={area} category={cat} />
               </td>
