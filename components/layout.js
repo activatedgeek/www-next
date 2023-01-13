@@ -39,7 +39,7 @@ const IconLink = ({ title, icon, href, color }) => (
 
 const Header = () => {
   return (
-    <div className="mx-auto z-10 opacity-95 flex justify-between bg-white top-0 px-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl border-b-2">
+    <div className="mx-auto z-10 opacity-95 flex justify-between bg-white top-0 py-3 px-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl border-b-2">
       <Link className="cursor-pointer" href="/">
         <Image
           src="/sk.svg"
@@ -119,7 +119,7 @@ const Footer = () => {
 
 const Layout = ({
   children,
-  frontmatter: { uri, title, description, area, cat, date, updated },
+  frontmatter: { uri, title, description, area, date, updated },
 }) => {
   const {
     siteUrl,
@@ -137,7 +137,7 @@ const Layout = ({
         {description ? <meta name="description" content={description} /> : null}
 
         <meta property="og:type" content="article" />
-        <meta property="article:tag" content={`${area}, ${cat}`} />
+        <meta property="article:tag" content={`${area}`} />
 
         {date ? (
           <meta property="article:published_time" content={date} />

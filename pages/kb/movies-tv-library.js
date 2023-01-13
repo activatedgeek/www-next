@@ -75,7 +75,6 @@ export async function getStaticProps() {
         title: "My Movies and TV Library",
         description: "My collection fetched from TMDb",
         area: "cult",
-        cat: "arts",
         date: "Jul 24 2021, 13:50 +0530",
       },
       movies: await getFavoriteMovies({ apiKey, sessionId }),

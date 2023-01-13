@@ -48,7 +48,6 @@ export async function getStaticProps() {
         title: "My Books Library",
         description: "My collection fetched from LibraryThing",
         area: "cult",
-        cat: "lit",
         date: "May 17 2021, 19:10 +0530",
       },
       books,

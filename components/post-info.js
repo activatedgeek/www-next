@@ -9,7 +9,7 @@ import {
 import AreaLink from "./area-link"
 
 export default function PostInfo({ frontmatter }) {
-  const { date, updated, area, cat } = frontmatter
+  const { date, updated, area } = frontmatter
   return (
     <>
       <div className="flex flex-row flex-wrap items-center py-2 lg:text-lg md:text-md sm:text-sm text-gray-500">
@@ -33,7 +33,7 @@ export default function PostInfo({ frontmatter }) {
         ) : null}
         <div className="inline-flex flex-nowrap items-center">
           <FontAwesomeIcon icon={faTags} className="mr-2 text-gray-600" />
-          <AreaLink area={area} category={cat} />
+          <AreaLink area={area} />
         </div>
       </div>
     </>
