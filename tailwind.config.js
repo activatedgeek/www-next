@@ -19,10 +19,6 @@ module.exports = {
       inset: {
         "-53": "-53%",
       },
-      fontFamily: {
-        serif: ['"Lora"', ...defaultTheme.fontFamily.serif],
-        sans: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
-      },
     },
   },
   variants: {

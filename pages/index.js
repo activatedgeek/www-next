@@ -7,7 +7,7 @@ export default MDXPage
 export async function getStaticProps() {
   const { siteDir } = getServerConfig()
   const { mdxSource, frontmatter } = await getPageByPath(
-    `${siteDir}/meta/info/about.md`
+    `${siteDir}/meta/about.md`
   )
   return {
     props: {
