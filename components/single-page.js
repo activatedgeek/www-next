@@ -9,7 +9,7 @@ export default function SinglePage({ frontmatter, children }) {
   return (
     <Layout frontmatter={frontmatter}>
       {/* <div className="z-10 md:sticky md:top-0 md:bg-white"> */}
-      <h1 className="mb-2">{title}</h1>
+      <h1 className="!mb-0">{title}</h1>
       <PostInfo frontmatter={frontmatter} />
       <div className="border-b border-gray-300" />
       {/* </div> */}

@@ -1,8 +1,6 @@
-const defaultTheme = require("tailwindcss/defaultTheme")
+// const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
-  // @NOTE https://github.com/tailwindlabs/tailwindcss-typography/issues/26.
-  important: true,
   content: [
     "./components/**/*.{js,ts,jsx,tsx}",
     "./lib/**/*.{js,ts,jsx,tsx}",
@@ -10,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // serif: [...defaultTheme.fontFamily.serif],
+      },
       borderWidth: {
         1: "1px",
       },
