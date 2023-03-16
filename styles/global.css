@@ -19,7 +19,11 @@ img {
 }
 a,
 .prose a {
-  @apply text-blue-500;
+  @apply font-normal text-blue-500;
+}
+blockquote,
+.prose blockquote {
+  @apply font-normal;
 }
 /* purgecss start ignore */
 div.math-display {
