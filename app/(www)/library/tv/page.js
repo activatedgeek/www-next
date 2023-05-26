@@ -1,12 +1,26 @@
 import format from "date-fns/format"
+import { getFavoriteMovies, getFavoriteTv } from "../../../../api/tmdb"
+import { generateMetadataFromPageInfo } from "../../../../api/metadata"
+import PageInfo from "../../kb/pageInfo"
 
-import { getServerConfig } from "../../lib/next-config"
-import SinglePage from "../../components/single-page"
-import { getFavoriteMovies, getFavoriteTv } from "../../lib/tmdb"
+const pageInfo = {
+  title: "My Movies & Library",
+  description: "My movies and TV favorites hosted on TMDb.",
+  area: "cult",
+  slug: "library/tv",
+}
 
-export default function MoviesLibrary({ frontmatter, movies, tv }) {
+export const metadata = generateMetadataFromPageInfo(pageInfo)
+
+export default async function Books() {
+  const movies = await getFavoriteMovies()
+  const tv = await getFavoriteTv()
+
   return (
-    <SinglePage frontmatter={frontmatter}>
+    <>
+      <h1 className="!mb-0">{pageInfo.title}</h1>
+      <PageInfo frontmatter={pageInfo} />
+      <div className="border-b border-gray-300" />
       <p>My library of favorites, fetched from my account at TMDb.</p>
       <h2 id="movies">Movies</h2>
       <div className="flex flex-row flex-wrap items-center">
@@ -62,23 +76,6 @@ export default function MoviesLibrary({ frontmatter, movies, tv }) {
           </div>
         ))}
       </div>
-    </SinglePage>
+    </>
   )
-}
-
-export async function getStaticProps() {
-  const { tmdbApiKey: apiKey, tmdbSessionId: sessionId } = getServerConfig()
-
-  return {
-    props: {
-      frontmatter: {
-        title: "My Movies and TV Library",
-        description: "My collection fetched from TMDb",
-        area: "cult",
-        date: "Jul 24 2021, 13:50 +0530",
-      },
-      movies: await getFavoriteMovies({ apiKey, sessionId }),
-      tv: await getFavoriteTv({ apiKey, sessionId }),
-    },
-  }
 }

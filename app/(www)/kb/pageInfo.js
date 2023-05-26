@@ -6,9 +6,9 @@ import {
   faTags,
 } from "@fortawesome/free-solid-svg-icons"
 
-import AreaLink from "./area-link"
+import AreaLink from "./areaLink"
 
-export default function PostInfo({ frontmatter }) {
+export default function PageInfo({ frontmatter }) {
   const { date, updated, area } = frontmatter
   return (
     <>

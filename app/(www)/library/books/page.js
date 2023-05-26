@@ -1,11 +1,24 @@
-import { getServerConfig } from "../../lib/next-config"
-import getAllBooks from "../../lib/librarything"
-import SinglePage from "../../components/single-page"
-import Rating from "../../components/rating"
+import getAllBooks from "../../../../api/librarything"
+import { generateMetadataFromPageInfo } from "../../../../api/metadata"
+import PageInfo from "../../kb/pageInfo"
+import Rating from "./rating"
 
-export default function BooksLibrary({ frontmatter, books }) {
+const pageInfo = {
+  title: "My Book Library",
+  description: "My book library hosted on LibraryThing",
+  area: "cult",
+  slug: "library/books",
+}
+
+export const metadata = generateMetadataFromPageInfo(pageInfo)
+
+export default async function Books() {
+  const books = await getAllBooks({ count: 500 })
   return (
-    <SinglePage frontmatter={frontmatter}>
+    <>
+      <h1 className="!mb-0">{pageInfo.title}</h1>
+      <PageInfo frontmatter={pageInfo} />
+      <div className="border-b border-gray-300" />
       <p>My library of books, fetched from my account at LibraryThing.</p>
       <div className="flex flex-row flex-wrap items-center">
         {books.map(({ isbn, year, cover, title, rating }) => (
@@ -34,23 +47,6 @@ export default function BooksLibrary({ frontmatter, books }) {
           </div>
         ))}
       </div>
-    </SinglePage>
+    </>
   )
-}
-
-export async function getStaticProps() {
-  const { libraryThingUserId: userid } = getServerConfig()
-  const books = await getAllBooks({ userid, count: 200 })
-
-  return {
-    props: {
-      frontmatter: {
-        title: "My Books Library",
-        description: "My collection fetched from LibraryThing",
-        area: "cult",
-        date: "May 17 2021, 19:10 +0530",
-      },
-      books,
-    },
-  }
 }

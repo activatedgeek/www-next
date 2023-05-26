@@ -8,7 +8,7 @@ See details on the stack [here](https://sanyamkapoor.com/kb/the-stack).
 
 ## Environment Variables
 
-- `NEXT_KB_DIR`: Path to Markdown/MDX files.
+- `KB_DIR`: Path to Markdown/MDX files.
 - `LIBRARYTHING_USERID`: LibraryThing User ID for use with the [API](https://wiki.librarything.com/index.php/LibraryThing_JSON_Books_API).
 - `GC_CODE`: [GoatCounter](https://www.goatcounter.com) code.
 - `TMDB_API_KEY`: API key for [TMDb](https://developers.themoviedb.org/3/getting-started/introduction)

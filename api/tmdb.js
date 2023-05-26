@@ -1,7 +1,15 @@
 import { MovieDb } from "moviedb-promise"
 import format from "date-fns/format"
 
-export async function getFavoriteMovies({ apiKey, sessionId }) {
+const apiKey = process.env.TMDB_API_KEY
+const sessionId = process.env.TMDB_SESSION_ID
+
+export async function getFavoriteMovies() {
+  if (apiKey === undefined) {
+    console.warn("Missing TMDB_API_KEY, skip fetching movies.")
+    return []
+  }
+
   const moviedb = new MovieDb(apiKey)
   moviedb.sessionId = sessionId
 
@@ -14,8 +22,7 @@ export async function getFavoriteMovies({ apiKey, sessionId }) {
     }))
     movies.push(...results)
   }
-
-  movies.sort((a, b) => {
+  movies.sort(function (a, b) {
     return (
       parseInt(format(new Date(b.release_date), "yyyy")) -
       parseInt(format(new Date(a.release_date), "yyyy"))
@@ -25,7 +32,12 @@ export async function getFavoriteMovies({ apiKey, sessionId }) {
   return movies
 }
 
-export async function getFavoriteTv({ apiKey, sessionId }) {
+export async function getFavoriteTv() {
+  if (apiKey === undefined) {
+    console.warn("Missing TMDB_API_KEY, skip fetching movies.")
+    return []
+  }
+
   const moviedb = new MovieDb(apiKey)
   moviedb.sessionId = sessionId
 
@@ -38,7 +50,7 @@ export async function getFavoriteTv({ apiKey, sessionId }) {
     }))
     tv.push(...results)
   }
-  tv.sort((a, b) => {
+  tv.sort(function (a, b) {
     return (
       parseInt(format(new Date(b.first_air_date), "yyyy")) -
       parseInt(format(new Date(a.first_air_date), "yyyy"))
