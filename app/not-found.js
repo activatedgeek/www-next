@@ -10,8 +10,8 @@ export default async function NotFound() {
 
   return (
     <Layout>
-      <h1 class="!mb-0">Oops... Not found!</h1>
-      <figure class="rehype-figure">
+      <h1 className="!mb-0">Oops... Not found!</h1>
+      <figure className="rehype-figure">
         {
           // eslint-disable-next-line @next/next/no-img-element
           <img

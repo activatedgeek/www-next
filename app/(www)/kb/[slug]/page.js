@@ -2,15 +2,13 @@ import fs from "fs"
 import { notFound } from "next/navigation"
 import { MDXRemote } from "next-mdx-remote/rsc"
 
-import { getAllPages, getPageInfoBySlug } from "../../../../api/cms"
+import { getAllPublicPages, getPageInfoBySlug } from "../../../../api/cms"
 import { generateMetadataFromPageInfo } from "../../../../api/metadata"
 import { getMDXOptions } from "../mdx"
 import PageInfo from "../pageInfo"
 
-export const dynamicParams = false
-
 export async function generateStaticParams() {
-  const allPages = await getAllPages()
+  const allPages = await getAllPublicPages()
   return allPages.map(({ slug }) => ({ slug }))
 }
 

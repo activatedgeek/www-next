@@ -7,8 +7,6 @@ import { getMDXOptions } from "./mdx"
 import PageInfo from "./pageInfo"
 import AreaLink from "./areaLink"
 
-export const dynamicParams = false
-
 const filePath = `${__dirname}/../../../../../app/(www)/kb/_www/kb.md`
 
 export async function generateMetadata() {

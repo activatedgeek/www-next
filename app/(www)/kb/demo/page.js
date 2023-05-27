@@ -6,8 +6,6 @@ import { generateMetadataFromPageInfo } from "../../../../api/metadata"
 import { getMDXOptions } from "../mdx"
 import PageInfo from "../pageInfo"
 
-export const dynamicParams = false
-
 const filePath = `${__dirname}/../../../../../../app/(www)/kb/_www/demo.md`
 
 export async function generateMetadata() {

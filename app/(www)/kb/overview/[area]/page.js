@@ -3,13 +3,11 @@ import { notFound } from "next/navigation"
 import matter from "gray-matter"
 import { MDXRemote } from "next-mdx-remote/rsc"
 
-import { areas, getAllPagesByArea } from "../../../../../api/cms"
+import { areas, getAllPublicPagesByArea } from "../../../../../api/cms"
 import { generateMetadataFromPageInfo } from "../../../../../api/metadata"
 import { getMDXOptions } from "../../mdx"
 import PageInfo from "../../pageInfo"
 import PageList from "../../pageList"
-
-export const dynamicParams = false
 
 const overviewFileDir = `${__dirname}/../../../../../../../app/(www)/kb/_www`
 
@@ -38,7 +36,7 @@ export default async function Page({ params: { area } }) {
     return notFound()
   }
 
-  const areaPages = await getAllPagesByArea(area)
+  const areaPages = await getAllPublicPagesByArea(area)
   const source = await fs.promises.readFile(
     `${overviewFileDir}/${area}.md`,
     "utf8"

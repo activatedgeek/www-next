@@ -42,16 +42,8 @@ export const commonMetadata = {
 export const gcCode = process.env.GC_CODE
 
 export function generateMetadataFromPageInfo(pageInfo) {
-  const {
-    title,
-    description,
-    authors,
-    date,
-    updated,
-    internal,
-    area,
-    slug,
-  } = pageInfo
+  const { title, description, authors, date, updated, internal, area, slug } =
+    pageInfo
   const allAuthors = [defaultAuthor, ...(authors || [])]
 
   return {

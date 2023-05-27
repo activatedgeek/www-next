@@ -104,13 +104,23 @@ export const getAllPages = cache(async function () {
   return allPages
 })
 
-export async function getAllPagesByArea(area) {
+export async function getAllPublicPages() {
   const allPages = await getAllPages()
+  return allPages.filter(({ internal }) => internal !== true)
+}
+
+export async function getAllInternalPages() {
+  const allPages = await getAllPages()
+  return allPages.filter(({ internal }) => internal !== false)
+}
+
+export async function getAllPublicPagesByArea(area) {
+  const allPages = await getAllPublicPages()
   return allPages.filter(({ area: _area }) => _area === area)
 }
 
 export async function getLatestPages(limit) {
-  const allPages = await getAllPages()
+  const allPages = await getAllPublicPages()
   return allPages.filter(({ internal }) => !internal).slice(0, limit)
 }
 

@@ -1,4 +1,4 @@
-import { getAllPages } from "../../../api/cms"
+import { getAllPublicPages } from "../../../api/cms"
 import { generateMetadataFromPageInfo } from "../../../api/metadata"
 import PageList from "../kb/pageList"
 
@@ -11,7 +11,7 @@ const pageInfo = {
 export const metadata = generateMetadataFromPageInfo(pageInfo)
 
 export default async function DB() {
-  const allPages = await getAllPages()
+  const allPages = await getAllPublicPages()
 
   return (
     <>
