@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
-import { commonMetadata, gcCode } from "../../api/metadata"
+import { commonMetadata, gcCode } from "../api/metadata"
 import Header from "./header"
 import Footer from "./footer"
 
