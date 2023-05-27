@@ -1,16 +1,16 @@
 export const baseUrl =
   process.env.NODE_ENV === "production"
     ? "https://sanyamkapoor.com"
-    : `https://${process.env.VERCEL_URL || "http://localhost:3000"}`
+    : `https://${process.env.VERCEL_URL || "localhost:3000"}`
 
-export const defaultAuthor = {
+export const baseAuthor = {
   name: "Sanyam Kapoor",
   url: "https://sanyamkapoor.com",
 }
 
 export const creator = "Sanyam Kapoor"
 
-export const publisher = "Sanyam Kapoor (sanyamkapoor.com)"
+export const publisher = "sanyamkapoor.com"
 
 export const social = {
   scholar: "https://go.sanyamkapoor.com/pubs",
@@ -44,13 +44,12 @@ export const gcCode = process.env.GC_CODE
 export function generateMetadataFromPageInfo(pageInfo) {
   const { title, description, authors, date, updated, internal, area, slug } =
     pageInfo
-  const allAuthors = [defaultAuthor, ...(authors || [])]
 
   return {
     title,
     description,
     keywords: [area],
-    authors: allAuthors,
+    authors,
     alternates: {
       canonical: slug,
     },
@@ -58,7 +57,7 @@ export function generateMetadataFromPageInfo(pageInfo) {
       type: "article",
       title,
       description,
-      authors: allAuthors.map(({ name }) => name),
+      authors: (authors || []).map(({ name }) => name),
       publishedTime: date,
       modifiedTime: updated,
     },

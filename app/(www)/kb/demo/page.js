@@ -2,7 +2,10 @@ import fs from "fs"
 import { MDXRemote } from "next-mdx-remote/rsc"
 import matter from "gray-matter"
 
-import { generateMetadataFromPageInfo } from "../../../../api/metadata"
+import {
+  baseAuthor,
+  generateMetadataFromPageInfo,
+} from "../../../../api/metadata"
 import { getMDXOptions } from "../mdx"
 import PageInfo from "../pageInfo"
 
@@ -12,7 +15,7 @@ export async function generateMetadata() {
   const source = await fs.promises.readFile(filePath, "utf8")
   const { data: pageInfo } = matter(source)
 
-  return generateMetadataFromPageInfo(pageInfo)
+  return generateMetadataFromPageInfo({ ...pageInfo, authors: [baseAuthor] })
 }
 
 export default async function Page() {

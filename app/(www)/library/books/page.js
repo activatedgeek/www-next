@@ -1,5 +1,8 @@
 import getAllBooks from "../../../../api/librarything"
-import { generateMetadataFromPageInfo } from "../../../../api/metadata"
+import {
+  baseAuthor,
+  generateMetadataFromPageInfo,
+} from "../../../../api/metadata"
 import PageInfo from "../../kb/pageInfo"
 import Rating from "./rating"
 
@@ -8,6 +11,7 @@ const pageInfo = {
   description: "My book library hosted on LibraryThing",
   area: "cult",
   slug: "library/books",
+  authors: [baseAuthor],
 }
 
 export const metadata = generateMetadataFromPageInfo(pageInfo)

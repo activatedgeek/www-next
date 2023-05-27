@@ -4,7 +4,7 @@ import { globby } from "globby"
 import GithubSlugger from "github-slugger"
 import matter from "gray-matter"
 
-import { defaultAuthor } from "./metadata"
+import { baseAuthor } from "./metadata"
 
 export const areas = {
   cult: {
@@ -82,7 +82,7 @@ export const getAllPages = cache(async function () {
       } = matter(rawString)
       const slug = _slug ? _slug : slugger.slug(title)
       const internal = _internal ? Boolean(_internal) : false
-      const authors = _authors ? [defaultAuthor, ..._authors] : [defaultAuthor]
+      const authors = _authors ? [baseAuthor, ..._authors] : [baseAuthor]
       return {
         filePath,
         title,

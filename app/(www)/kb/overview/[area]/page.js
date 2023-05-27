@@ -4,7 +4,10 @@ import matter from "gray-matter"
 import { MDXRemote } from "next-mdx-remote/rsc"
 
 import { areas, getAllPublicPagesByArea } from "../../../../../api/cms"
-import { generateMetadataFromPageInfo } from "../../../../../api/metadata"
+import {
+  baseAuthor,
+  generateMetadataFromPageInfo,
+} from "../../../../../api/metadata"
 import { getMDXOptions } from "../../mdx"
 import PageInfo from "../../pageInfo"
 import PageList from "../../pageList"
@@ -28,6 +31,7 @@ export async function generateMetadata({ params: { area } }) {
   return generateMetadataFromPageInfo({
     ...pageInfo,
     slug: `kb/overview/${area}`,
+    authors: [baseAuthor],
   })
 }
 

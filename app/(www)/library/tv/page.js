@@ -1,6 +1,9 @@
 import format from "date-fns/format"
 import { getFavoriteMovies, getFavoriteTv } from "../../../../api/tmdb"
-import { generateMetadataFromPageInfo } from "../../../../api/metadata"
+import {
+  baseAuthor,
+  generateMetadataFromPageInfo,
+} from "../../../../api/metadata"
 import PageInfo from "../../kb/pageInfo"
 
 const pageInfo = {
@@ -8,6 +11,7 @@ const pageInfo = {
   description: "My movies and TV favorites hosted on TMDb.",
   area: "cult",
   slug: "library/tv",
+  authors: [baseAuthor],
 }
 
 export const metadata = generateMetadataFromPageInfo(pageInfo)
