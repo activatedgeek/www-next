@@ -1,7 +1,7 @@
 export const baseUrl =
   process.env.NODE_ENV === "production"
-    ? `https://${process.env.VERCEL_URL || "sanyamkapoor.com"}`
-    : "http://localhost:3000"
+    ? "https://sanyamkapoor.com"
+    : `https://${process.env.VERCEL_URL || "http://localhost:3000"}`
 
 export const defaultAuthor = {
   name: "Sanyam Kapoor",
