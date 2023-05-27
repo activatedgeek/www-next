@@ -1,10 +1,10 @@
 ---
-title: Knowledge Bayes
+title: Knowledge Base
 description: My second brain.
 date: Jul 14 2020, 19:07 -0700
-updated: May 26 2023, 22:52 -0400
+updated: May 26 2023, 23:42 -0400
 area: meta
-slug: /kb
+slug: kb
 ---
 
 This is my _second brain_.
@@ -19,17 +19,13 @@ linked below are the place to go.
 
 ## Areas
 
-[:1234: Math.](#mathematics) | [:leaves: Nat. Sciences](#natural-sciences)  | [:rocket: Tech.](#technology) | [:books: Reference](#reference) | [:bulb: Meta](#meta)
-
-[:performing_arts: Culture](#culture) | [:information_desk_person: People](#people) | [:thought_balloon: Philosophy](#philosophy) | [:classical_building: Society](#society)
-
 Everything is categorized into a few primary "areas". [Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Contents)
 has already done a great job of organizing knowledge. I'm taking a page off
 their book, appropriate some of those areas.
 
 ### Culture 
 
-:performing_arts:  [Visit Overview Page](/kb/cult-overview)
+Overview: <AreaLink area="cult" />
 
 This area includes everything that the human activity has produced in terms of
 arts, media, food, literature, etc. In the performing arts, take a look at my
@@ -41,7 +37,7 @@ I hate cooking, maybe because I suck. Nevertheless, I have some quick
 
 ### Mathematics
 
-:1234: [Visit Overview Page](/kb/math-overview)
+Overview: <AreaLink area="math" />
 
 Mathematics is the language of nature. Or at least the best thing that humans
 have at disposal to understand nature. This is a collection of posts around
@@ -50,7 +46,7 @@ and other research-y topics I am involved in.
 
 ### Meta
 
-:bulb: [Visit Overview Page](/kb/meta-overview)
+Overview: <AreaLink area="meta" />
 
 Posts in this area are meant to explain the _system behind the system_. It
 includes this page and the [about](/) page. Visit [The Stack](/kb/the-stack)
@@ -58,7 +54,7 @@ to get a summary of all the tools used to build the website.
 
 ### Natural sciences
 
-:leaves: [Visit Overview Page](/kb/nat-overview)
+Overview: <AreaLink area="nat" />
 
 This is the home to topics in physics, chemistry, biology, geology among other
 natural sciences. The more formal sciences with some semblance of laid out rules
@@ -67,16 +63,16 @@ go under [Mathematics](#mathematics). For instance, take a look at some
 
 ### People
 
-:information_desk_person: [Visit Overview Page](/kb/people-overview)
+Overview: <AreaLink area="people" />
 
 This area hosts content that starts at individual personalities and their legacies.
-I've collected a few personalities at the [People Overview](/kb/people-overview) page.
+I've collected a few personalities at the [People Overview](/kb/overview/people) page.
 These are websites I occasionally drop by on a sunny day. On a sad day,
 I usually procrastinate by watching [movies](/kb/movies-and-tv); or revisit some [adages](/kb/adages-quotes).
 
 ### Philosophy
 
-:thought_balloon: [Visit Overview Page](/kb/phil-overview)
+Overview: <AreaLink area="phil" />
 
 Topics like metaphysics find their place under the Philosophy area. Here's a
 collection of [Existential Risks](/kb/existential-risks) humanity faces. It also
@@ -86,7 +82,7 @@ Psychology](/kb/cognitive-and-experimental-psychology). I've also collected a
 
 ### Reference
 
-:books: [Visit Overview Page](/kb/ref-overview)
+Overview: <AreaLink area="ref" />
 
 This area is dedicated to collecting reference materials. Take a look at
 [Textbooks on various subjects](/kb/textbooks-on-various-subjects) for a comprehensive
@@ -102,7 +98,7 @@ should come in handy for this.
 
 ### Society
 
-:classical_building: [Visit Overview Page](/kb/soc-overview)
+Overview: <AreaLink area="soc" />
 
 Everything that humans do collectively as a "society" goes in here. This involves
 topics in economics, journalism, business etc. It also includes my general
@@ -116,7 +112,7 @@ quantification and this is a page to remind myself of that.
 
 ### Technology
 
-:rocket: [Visit Overview Page](/kb/tech-overview)
+Overview: <AreaLink area="tech" />
 
 This area involves collecting knowledge about the "process" of driving value
 from raw materials. I note a few [Products](/kb/products) I like. This is usually

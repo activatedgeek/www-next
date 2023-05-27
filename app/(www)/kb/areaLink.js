@@ -9,7 +9,7 @@ export default function AreaLink({ area }) {
     <span className="inline-block text-base">
       <Link
         className={`inline-block mx-1 px-2 py-1 rounded-md shadow-md ${areaColor} !no-underline !text-white`}
-        href={`/kb/${area}-overview`}
+        href={`/kb/overview/${area}`}
       >
         {emoji.get(emoji_code)} {area}
       </Link>

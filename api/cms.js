@@ -8,56 +8,47 @@ import { defaultAuthor } from "./metadata"
 
 export const areas = {
   cult: {
-    url: "/kb/culture-overview",
     label: "Culture",
     color: "bg-red-400",
     emoji_code: "performing_arts",
   },
   math: {
     label: "Mathematics",
-    url: "/kb/mathematics-overview",
-    color: "bg-green-500",
+    color: "bg-green-600",
     emoji_code: "1234",
   },
   meta: {
     label: "Meta",
-    url: "/kb/meta-overview",
     color: "bg-blue-500",
     emoji_code: "bulb",
   },
   nat: {
     label: "Natural sciences",
-    url: "/kb/natural-sciences-overview",
-    color: "bg-green-600",
-    emoji_code: "leaves",
+    color: "bg-cyan-400",
+    emoji_code: "dna",
   },
   people: {
     label: "People",
-    url: "/kb/people-overview",
     color: "bg-red-600",
     emoji_code: "information_desk_person",
   },
   phil: {
     label: "Philosophy",
-    url: "/kb/philosophy-overview",
     color: "bg-pink-400",
     emoji_code: "thought_balloon",
   },
   ref: {
     label: "Reference",
-    url: "/kb/reference-overview",
     color: "bg-blue-600",
     emoji_code: "books",
   },
   soc: {
     label: "Society",
-    url: "/kb/society-overview",
     color: "bg-pink-700",
     emoji_code: "classical_building",
   },
   tech: {
     label: "Technology",
-    url: "/kb/technology-overview",
     color: "bg-yellow-500",
     emoji_code: "rocket",
   },
@@ -112,6 +103,11 @@ export const getAllPages = cache(async function () {
 
   return allPages
 })
+
+export async function getAllPagesByArea(area) {
+  const allPages = await getAllPages()
+  return allPages.filter(({ area: _area }) => _area === area)
+}
 
 export async function getLatestPages(limit) {
   const allPages = await getAllPages()

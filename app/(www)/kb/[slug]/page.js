@@ -22,7 +22,7 @@ export async function generateMetadata({ params: { slug } }, _) {
     return null
   }
 
-  return generateMetadataFromPageInfo(pageInfo)
+  return generateMetadataFromPageInfo({ ...pageInfo, slug: `/kb/${slug}` })
 }
 
 export default async function Page({ params: { slug } }) {

@@ -5,16 +5,17 @@ import matter from "gray-matter"
 import { generateMetadataFromPageInfo } from "../../../api/metadata"
 import { getMDXOptions } from "./mdx"
 import PageInfo from "./pageInfo"
+import AreaLink from "./areaLink"
 
 export const dynamicParams = false
 
-const filePath = `${__dirname}/../../../../../app/\(www\)/kb/kb.md`
+const filePath = `${__dirname}/../../../../../app/(www)/kb/_www/kb.md`
 
 export async function generateMetadata() {
   const source = await fs.promises.readFile(filePath, "utf8")
   const { data: pageInfo } = matter(source)
 
-  return generateMetadataFromPageInfo(pageInfo)
+  return generateMetadataFromPageInfo({ ...pageInfo })
 }
 
 export default async function Page() {
@@ -28,6 +29,7 @@ export default async function Page() {
       <div className="border-b border-gray-300" />
       <MDXRemote
         source={source}
+        components={{ AreaLink }}
         options={{
           mdxOptions: await getMDXOptions(),
           parseFrontmatter: true,

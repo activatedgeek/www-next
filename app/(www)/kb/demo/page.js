@@ -8,7 +8,7 @@ import PageInfo from "../pageInfo"
 
 export const dynamicParams = false
 
-const filePath = `${__dirname}/../../../../../../app/\(www\)/kb/demo/demo.md`
+const filePath = `${__dirname}/../../../../../../app/(www)/kb/_www/demo.md`
 
 export async function generateMetadata() {
   const source = await fs.promises.readFile(filePath, "utf8")

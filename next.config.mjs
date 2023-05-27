@@ -7,7 +7,7 @@ export default {
   },
   async redirects() {
     let allRedirects = [
-      { source: "/about", destination: "/", permanent: false },
+      { source: "/kb/about", destination: "/", permanent: false },
     ]
     // allPages.map(({ slug: destination, redirectsFrom }) => {
     //   for (const source of redirectsFrom) {

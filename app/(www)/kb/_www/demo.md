@@ -4,6 +4,7 @@ description: A test page for the MDX processor.
 area: meta
 date: May 6 2021, 13:33 +0530
 updated: May 26 2023, 22:32 -0400
+slug: kb/demo
 ---
 
 This is a reference page to see all Markdown elements and styling rendered. All headings have an attached anchor link.

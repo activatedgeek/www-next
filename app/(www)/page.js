@@ -11,7 +11,11 @@ import PageList from "./kb/pageList"
 export async function generateMetadata() {
   const pageInfo = await getPageInfoBySlug("about")
 
-  return generateMetadataFromPageInfo({ ...pageInfo, title: creator })
+  return generateMetadataFromPageInfo({
+    ...pageInfo,
+    title: creator,
+    slug: "/",
+  })
 }
 
 export default async function Page() {
