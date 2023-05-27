@@ -1,28 +1,33 @@
 import fs from "fs"
+import { notFound } from "next/navigation"
 import { MDXRemote } from "next-mdx-remote/rsc"
 
-import { getPageInfoBySlug, getLatestPages } from "../../api/cms"
-import { creator, generateMetadataFromPageInfo } from "../../api/metadata"
+import { getLatestPages, getPageInfoBySlug } from "../../api/cms"
+import { generateMetadataFromPageInfo } from "../../api/metadata"
 import { getMDXOptions } from "./kb/mdx"
-import Layout from "./kb/layout"
 import PageInfo from "./kb/pageInfo"
+import Layout from "./kb/layout"
 import PageList from "./kb/pageList"
 
 export async function generateMetadata() {
   const pageInfo = await getPageInfoBySlug("about")
+  if (!pageInfo) {
+    return null
+  }
 
-  return generateMetadataFromPageInfo({
-    ...pageInfo,
-    title: creator,
-    slug: "/",
-  })
+  return generateMetadataFromPageInfo({ ...pageInfo, slug: "/" })
 }
 
 export default async function Page() {
-  const { relPath: filePath, ...frontmatter } = await getPageInfoBySlug("about")
-  const source = await fs.promises.readFile(filePath, "utf8")
+  const pageInfo = await getPageInfoBySlug("about")
+  if (!pageInfo) {
+    return notFound()
+  }
 
   const latestPages = await getLatestPages(17)
+
+  const { filePath, ...frontmatter } = pageInfo
+  const source = await fs.promises.readFile(filePath, "utf8")
 
   return (
     <Layout>

@@ -66,8 +66,8 @@ export const getAllPages = cache(async function () {
 
   const slugger = new GithubSlugger()
   let allPages = await Promise.all(
-    rawPaths.map(async (relPath) => {
-      const rawString = await fs.readFile(relPath)
+    rawPaths.map(async (filePath) => {
+      const rawString = await fs.readFile(filePath)
       const {
         data: {
           title,
@@ -84,7 +84,7 @@ export const getAllPages = cache(async function () {
       const internal = _internal ? Boolean(_internal) : false
       const authors = _authors ? [defaultAuthor, ..._authors] : [defaultAuthor]
       return {
-        relPath,
+        filePath,
         title,
         description,
         authors,
@@ -114,7 +114,7 @@ export async function getLatestPages(limit) {
   return allPages.filter(({ internal }) => !internal).slice(0, limit)
 }
 
-export const getPageInfoBySlug = cache(async function (slug) {
+export async function getPageInfoBySlug(slug) {
   const allPages = await getAllPages()
 
   const filteredPage = allPages.filter(({ slug: _slug }) => _slug === slug)
@@ -122,4 +122,4 @@ export const getPageInfoBySlug = cache(async function (slug) {
     return null
   }
   return filteredPage[0]
-})
+}

@@ -1,6 +1,6 @@
 export const baseUrl =
   process.env.NODE_ENV === "production"
-    ? process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL || "sanyamkapoor.com"}`
     : "http://localhost:3000"
 
 export const defaultAuthor = {
@@ -60,7 +60,6 @@ export function generateMetadataFromPageInfo(pageInfo) {
     keywords: [area],
     authors: allAuthors,
     alternates: {
-      // FIXME: auto-prefix with kb?
       canonical: slug,
     },
     openGraph: {

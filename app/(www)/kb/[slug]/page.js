@@ -11,9 +11,7 @@ export const dynamicParams = false
 
 export async function generateStaticParams() {
   const allPages = await getAllPages()
-  return allPages.map(({ slug }) => {
-    slug
-  })
+  return allPages.map(({ slug }) => ({ slug }))
 }
 
 export async function generateMetadata({ params: { slug } }, _) {
@@ -31,7 +29,7 @@ export default async function Page({ params: { slug } }) {
     return notFound()
   }
 
-  const { relPath: filePath, ...frontmatter } = pageInfo
+  const { filePath, ...frontmatter } = pageInfo
   const source = await fs.promises.readFile(filePath, "utf8")
 
   return (

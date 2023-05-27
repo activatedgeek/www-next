@@ -14,9 +14,7 @@ export const dynamicParams = false
 const overviewFileDir = `${__dirname}/../../../../../../../app/(www)/kb/_www`
 
 export async function generateStaticParams() {
-  return Object.keys(areas).map((area) => {
-    area
-  })
+  return Object.keys(areas).map((area) => ({ area }))
 }
 
 export async function generateMetadata({ params: { area } }) {

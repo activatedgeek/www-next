@@ -1,5 +1,7 @@
+import { getAllPages } from "../../../api/cms"
 import { generateMetadataFromPageInfo } from "../../../api/metadata"
 import PageInfo from "../kb/pageInfo"
+import PageList from "../kb/pageList"
 
 const pageInfo = {
   title: "Database of Pages",
@@ -11,6 +13,8 @@ const pageInfo = {
 export const metadata = generateMetadataFromPageInfo(pageInfo)
 
 export default async function DB() {
+  const allPages = await getAllPages()
+
   return (
     <>
       <h1 className="!mb-0">{pageInfo.title}</h1>
@@ -18,9 +22,10 @@ export default async function DB() {
       <div className="border-b border-gray-300" />
       <p className="hint warn">
         ⚠️ This is the archive of all pages on this website, but may not be the
-        best way to navigate. See the <a href="/kb">Knowledge Bayes</a> for a
+        best way to navigate. See the <a href="/kb">Knowledge Base</a> for a
         more streamlined start.
       </p>
+      <PageList title="Archive" pages={allPages} />
     </>
   )
 }
