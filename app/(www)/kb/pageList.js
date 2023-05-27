@@ -8,11 +8,11 @@ export default function PageList({ title, pages }) {
       {title ? <h2>{title}</h2> : null}
       <table>
         <tbody>
-          {pages.map(({ title: _t, slug, area, last_updated }, _i) => (
+          {pages.map(({ title: _t, slug, area, updated }, _i) => (
             <tr key={_i}>
               <td className="w-20 md:w-24">
                 <span className="text-sm text-gray-500">
-                  {format(new Date(last_updated), "MMM yyyy")}
+                  {format(new Date(updated), "MMM yyyy")}
                 </span>
               </td>
               <td>

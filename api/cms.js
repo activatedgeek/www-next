@@ -91,13 +91,13 @@ export const getAllPages = cache(async function () {
         area,
         slug,
         date: new Date(date),
-        last_updated: new Date(_updated || date),
+        updated: new Date(_updated || date),
         internal,
       }
     })
   )
 
-  allPages.sort(({ last_updated: a }, { last_updated: b }) => {
+  allPages.sort(({ updated: a }, { updated: b }) => {
     return b - a
   })
 

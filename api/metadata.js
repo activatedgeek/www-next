@@ -47,7 +47,7 @@ export function generateMetadataFromPageInfo(pageInfo) {
     description,
     authors,
     date,
-    last_updated,
+    updated,
     internal,
     area,
     slug,
@@ -68,7 +68,7 @@ export function generateMetadataFromPageInfo(pageInfo) {
       description,
       authors: allAuthors.map(({ name }) => name),
       publishedTime: date,
-      modifiedTime: last_updated,
+      modifiedTime: updated,
     },
     robots: {
       index: !internal,
