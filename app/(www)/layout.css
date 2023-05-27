@@ -50,18 +50,7 @@ p.hint.warn {
 p.hint.error {
   @apply bg-red-200;
 }
-iframe.tweet {
-  @apply w-full mx-auto h-auto;
-  max-width: 550px;
-  min-height: 50vh;
-}
 section.footnotes {
-  @apply border-t-1 p-3 bg-slate-100 sm:text-xs md:text-base;
-}
-div.references {
-  @apply border-t-2 p-4 bg-slate-50 border-gray-300 sm:text-xs md:text-base;
-}
-div.references div.csl-entry {
-  @apply my-3;
+  @apply border-t-1 p-3 bg-slate-50 sm:text-xs md:text-base;
 }
 /* purgecss end ignore */

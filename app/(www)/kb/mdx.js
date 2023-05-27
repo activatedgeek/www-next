@@ -65,17 +65,6 @@ export async function getMDXOptions() {
       //     passThrough: (await import('@mdx-js/mdx')).nodeTypes,
       //   },
       // ],
-      // FIXME: doesn't work with app router.
-      // [
-      //   (await import('rehype-citation')).default,
-      //   {
-      //     linkCitations: true,
-      //     csl: "chicago",
-      //     // csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-fullnote-bibliography.csl",
-      //     bibliography: (await bibExists()) ? bibPath : null,
-      //     // suppressBibliography: true,
-      //   },
-      // ],
     ],
   }
 }

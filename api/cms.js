@@ -113,6 +113,11 @@ export const getAllPages = cache(async function () {
   return allPages
 })
 
+export async function getLatestPages(limit) {
+  const allPages = await getAllPages()
+  return allPages.filter(({ internal }) => !internal).slice(0, limit)
+}
+
 export const getPageInfoBySlug = cache(async function (slug) {
   const allPages = await getAllPages()
 
