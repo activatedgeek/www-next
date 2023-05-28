@@ -16,10 +16,10 @@ export default function Header() {
         />
       </Link>
       <div className="flex items-center">
-        <Link className="mx-4" href="/kb">
+        <Link className="mx-4 text-link" href="/kb">
           <FontAwesomeIcon icon={faBrain} /> KB
         </Link>
-        <Link className="mx-4" href="/">
+        <Link className="mx-4 text-link" href="/">
           <FontAwesomeIcon icon={faHome} /> Home
         </Link>
       </div>
