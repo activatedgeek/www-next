@@ -6,7 +6,7 @@ import {
 } from "../../../../api/metadata"
 import PageInfo from "../../kb/pageInfo"
 
-const pageInfo = {
+const frontmatter = {
   title: "My Movies & Library",
   description: "My movies and TV favorites hosted on TMDb.",
   area: "cult",
@@ -14,7 +14,7 @@ const pageInfo = {
   authors: [baseAuthor],
 }
 
-export const metadata = generateMetadataFromPageInfo(pageInfo)
+export const metadata = generateMetadataFromPageInfo(frontmatter)
 
 export default async function Books() {
   const movies = await getFavoriteMovies()
@@ -22,9 +22,7 @@ export default async function Books() {
 
   return (
     <>
-      <h1 className="!mb-0">{pageInfo.title}</h1>
-      <PageInfo frontmatter={pageInfo} />
-      <div className="border-b border-gray-300" />
+      <PageInfo {...frontmatter} />
       <p>My library of favorites, fetched from my account at TMDb.</p>
       <h2 id="movies">Movies</h2>
       <div className="flex flex-row flex-wrap items-center">

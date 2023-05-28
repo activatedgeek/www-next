@@ -49,9 +49,7 @@ export default async function Page({ params: { area } }) {
 
   return (
     <>
-      <h1 className="!mb-0">{frontmatter.title}</h1>
-      <PageInfo frontmatter={frontmatter} />
-      <div className="border-b border-gray-300" />
+      <PageInfo {...frontmatter} />
       <MDXRemote
         source={source}
         options={{

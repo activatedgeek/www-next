@@ -8,11 +8,11 @@ import {
 
 import AreaLink from "./areaLink"
 
-export default function PageInfo({ frontmatter }) {
-  const { date, updated, area } = frontmatter
+export default function PageInfo({ title, date, updated, area }) {
   return (
     <>
-      <div className="flex flex-row flex-wrap items-center py-2 lg:text-lg md:text-md sm:text-sm text-gray-500">
+      <h1 className="!mb-0">{title}</h1>
+      <div className="flex flex-row flex-wrap items-center py-2 lg:text-lg md:text-md sm:text-sm text-gray-500 border-b border-gray-300">
         {date ? (
           <span className="inline-block mr-6">
             <FontAwesomeIcon

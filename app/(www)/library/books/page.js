@@ -6,7 +6,7 @@ import {
 import PageInfo from "../../kb/pageInfo"
 import Rating from "./rating"
 
-const pageInfo = {
+const frontmatter = {
   title: "My Book Library",
   description: "My book library hosted on LibraryThing",
   area: "cult",
@@ -14,15 +14,13 @@ const pageInfo = {
   authors: [baseAuthor],
 }
 
-export const metadata = generateMetadataFromPageInfo(pageInfo)
+export const metadata = generateMetadataFromPageInfo(frontmatter)
 
 export default async function Books() {
   const books = await getAllBooks({ count: 500 })
   return (
     <>
-      <h1 className="!mb-0">{pageInfo.title}</h1>
-      <PageInfo frontmatter={pageInfo} />
-      <div className="border-b border-gray-300" />
+      <PageInfo {...frontmatter} />
       <p>My library of books, fetched from my account at LibraryThing.</p>
       <div className="flex flex-row flex-wrap items-center">
         {books.map(({ isbn, year, cover, title, rating }) => (
