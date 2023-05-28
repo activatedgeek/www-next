@@ -9,47 +9,47 @@ import { baseAuthor } from "./metadata"
 export const areas = {
   cult: {
     label: "Culture",
-    color: "bg-red-400",
-    emoji_code: "performing_arts",
+    bgColor: "bg-sky-400",
+    emoji_code: "frame_with_picture",
   },
   math: {
     label: "Mathematics",
-    color: "bg-green-600",
-    emoji_code: "1234",
+    bgColor: "bg-red-400",
+    emoji_code: "abacus",
   },
   meta: {
     label: "Meta",
-    color: "bg-blue-500",
+    bgColor: "bg-stone-400",
     emoji_code: "bulb",
   },
   nat: {
     label: "Natural sciences",
-    color: "bg-cyan-400",
+    bgColor: "bg-pink-400",
     emoji_code: "dna",
   },
   people: {
     label: "People",
-    color: "bg-red-600",
+    bgColor: "bg-purple-400",
     emoji_code: "information_desk_person",
   },
   phil: {
     label: "Philosophy",
-    color: "bg-pink-400",
+    bgColor: "bg-amber-400",
     emoji_code: "thought_balloon",
   },
   ref: {
     label: "Reference",
-    color: "bg-blue-600",
+    bgColor: "bg-green-400",
     emoji_code: "books",
   },
   soc: {
     label: "Society",
-    color: "bg-pink-700",
+    bgColor: "bg-yellow-400",
     emoji_code: "classical_building",
   },
   tech: {
     label: "Technology",
-    color: "bg-yellow-500",
+    bgColor: "bg-orange-400",
     emoji_code: "rocket",
   },
 }
