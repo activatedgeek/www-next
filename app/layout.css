@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* purgecss start ignore */
 h1,
 h2,
 h3,
@@ -25,7 +26,9 @@ blockquote,
 .prose blockquote {
   @apply font-normal;
 }
-/* purgecss start ignore */
+pre {
+  @apply !bg-stone-100;
+}
 div.math-display {
   @apply overflow-auto;
 }
@@ -51,6 +54,6 @@ p.hint.error {
   @apply bg-red-200;
 }
 section.footnotes {
-  @apply border-t-1 p-3 bg-slate-50 sm:text-xs md:text-base;
+  @apply border-t-1 p-3 bg-stone-50 sm:text-xs md:text-base;
 }
 /* purgecss end ignore */

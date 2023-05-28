@@ -19,6 +19,8 @@ linked below are the place to go.
 
 ## Areas
 
+<AreaLink area="cult" /> <AreaLink area="math" /> <AreaLink area="meta" /> <AreaLink area="nat" /> <AreaLink area="people" /> <AreaLink area="phil" /> <AreaLink area="ref" /> <AreaLink area="soc" /> <AreaLink area="tech" />
+
 Everything is categorized into a few primary "areas". [Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Contents)
 has already done a great job of organizing knowledge. I'm taking a page off
 their book, appropriate some of those areas.

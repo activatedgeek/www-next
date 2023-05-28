@@ -4,10 +4,10 @@ import Link from "next/link"
 import { areas } from "../../../api/cms"
 
 export default function AreaLink({ area }) {
-  const { bgColor, emoji_code } = areas[area]
+  const { textColor, bgColor, ringColor, emoji_code } = areas[area]
   return (
     <Link
-      className={`inline-flex items-center rounded-md ${bgColor} px-2 py-1 text-sm !text-white font-medium !no-underline shadow-md`}
+      className={`inline-flex items-center rounded-md bg-neutral-50 px-2 py-1 text-sm ${textColor} !no-underline hover:shadow-md ring-1 ring-inset ${bgColor} ${ringColor}`}
       href={`/kb/overview/${area}`}
     >
       {emoji.get(emoji_code)} {area}
