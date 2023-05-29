@@ -18,10 +18,6 @@ function link() {
 }
 
 export async function getMDXOptions() {
-  // const bibPath = `${process.env.KB_DIR}/references.bib`
-  // const bibExists = async (path) =>
-  //   !!(await fs.stat(bibPath).catch((_) => false))
-
   return {
     remarkPlugins: [
       (await import("remark-math")).default,

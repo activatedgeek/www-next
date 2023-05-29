@@ -17,7 +17,7 @@ import { creator, social } from "../api/metadata"
 const IconLink = ({ title, icon, href, color }) => (
   <a
     title={title}
-    className="m-1.5 text-gray-500"
+    className="m-1.5"
     href={href}
     target="_blank"
     rel="noopener noreferrer"
@@ -30,7 +30,7 @@ export default function Footer() {
   const { scholar, github, yc, linkedin, stackoverflow, twitter, code } = social
 
   return (
-    <div className="mx-auto mt-6 border-t-2 border-gray-300 p-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl">
+    <div className="mx-auto mt-6 border-t-2 border-gray-300 p-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl text-gray-500">
       <div className="flex justify-center text-xl">
         <IconLink title="Archive" icon={faArchive} href="/db" />
         <IconLink
@@ -72,7 +72,7 @@ export default function Footer() {
         <IconLink title="Source Code" icon={faCode} href={code} />
       </div>
       <div className="flex justify-center">
-        <p className="text-base text-gray-500">
+        <p>
           © {new Date().getFullYear()} {creator}
         </p>
       </div>

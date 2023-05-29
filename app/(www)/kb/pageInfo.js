@@ -17,7 +17,7 @@ export default function PageInfo({ title, date, updated, area }) {
           <span className="inline-block mr-6">
             <FontAwesomeIcon
               icon={faCalendarDay}
-              className="mr-2 text-gray-600"
+              className="mr-2"
             />
             {format(new Date(date), "MMM d, yyyy")}
           </span>
@@ -26,13 +26,13 @@ export default function PageInfo({ title, date, updated, area }) {
           <span className="inline-block mr-6">
             <FontAwesomeIcon
               icon={faCalendarPlus}
-              className="mr-2 text-gray-600"
+              className="mr-2"
             />
             Last updated: {format(new Date(updated), "MMM d, yyyy")}
           </span>
         ) : null}
         <div className="inline-flex flex-nowrap items-center">
-          <FontAwesomeIcon icon={faTags} className="mr-2 text-gray-600" />
+          <FontAwesomeIcon icon={faTags} className="mr-2" />
           <AreaLink area={area} />
         </div>
       </div>
