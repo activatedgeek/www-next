@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        link: colors.blue[500],
+        link: colors.blue[600],
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -43,7 +43,8 @@ module.exports = {
             },
             a: {
               fontWeight: "normal",
-              color: theme("colors.blue.500"),
+              textDecoration: "none",
+              color: theme("colors.blue.600"),
             },
             blockquote: {
               fontWeight: "normal",
