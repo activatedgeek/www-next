@@ -2,6 +2,9 @@ import colors from "tailwindcss/colors"
 
 module.exports = {
   content: ["./api/**/*.{js,ts,jsx,tsx,mdx}", "./app/**/*.{js,ts,jsx,tsx,mdx}"],
+  safelist: [{
+    pattern: /hljs+/,
+  }],
   theme: {
     extend: {
       colors: {
