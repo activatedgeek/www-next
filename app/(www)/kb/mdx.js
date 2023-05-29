@@ -47,11 +47,10 @@ export async function getMDXOptions() {
       ],
       (await import("rehype-figure")).default,
       [
-        (await import("rehype-highlight")).default,
+        (await import("rehype-pretty-code")).default,
         {
-          languages: {
-            tex: (await import("highlight.js/lib/languages/latex")).default,
-          },
+          theme: "min-light",
+          keepBackground: true,
         },
       ],
       (await import("rehype-katex")).default,

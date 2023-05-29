@@ -1,10 +1,9 @@
-import "./layout.css"
 import "katex/dist/katex.min.css"
-import "highlight.js/styles/github.css"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
+import "./layout.css"
 import { commonMetadata, gcCode } from "../api/metadata"
 import Header from "./header"
 import Footer from "./footer"

@@ -49,7 +49,9 @@ module.exports = {
               fontWeight: "normal",
             },
             pre: {
-              backgroundColor: theme("colors.zinc.50"),
+              borderWidth: theme("borderWidth.4"),
+              borderRadius: theme("borderRadius.md"),
+              boxShadow: theme("boxShadow.md"),
             },
             "div.math-display": {
               overflow: "auto",
@@ -75,9 +77,6 @@ module.exports = {
           },
         },
       }),
-      fontFamily: {
-        // serif: [...defaultTheme.fontFamily.serif],
-      },
       borderWidth: {
         1: "1px",
       },

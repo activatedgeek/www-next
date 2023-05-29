@@ -15,19 +15,13 @@ export default function PageInfo({ title, date, updated, area }) {
       <div className="flex flex-row flex-wrap items-center py-2 lg:text-lg md:text-md sm:text-sm text-gray-500 border-b border-gray-300">
         {date ? (
           <span className="inline-block mr-6">
-            <FontAwesomeIcon
-              icon={faCalendarDay}
-              className="mr-2"
-            />
+            <FontAwesomeIcon icon={faCalendarDay} className="mr-2" />
             {format(new Date(date), "MMM d, yyyy")}
           </span>
         ) : null}
         {updated ? (
           <span className="inline-block mr-6">
-            <FontAwesomeIcon
-              icon={faCalendarPlus}
-              className="mr-2"
-            />
+            <FontAwesomeIcon icon={faCalendarPlus} className="mr-2" />
             Last updated: {format(new Date(updated), "MMM d, yyyy")}
           </span>
         ) : null}
