@@ -49,6 +49,7 @@ export async function getMDXOptions() {
       [
         (await import("rehype-highlight")).default,
         {
+          detect: true,
           languages: {
             tex: (await import("highlight.js/lib/languages/latex")).default,
           },
