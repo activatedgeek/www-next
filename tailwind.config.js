@@ -2,9 +2,6 @@ import colors from "tailwindcss/colors"
 
 module.exports = {
   content: ["./api/**/*.{js,ts,jsx,tsx,mdx}", "./app/**/*.{js,ts,jsx,tsx,mdx}"],
-  safelist: [{
-    pattern: /hljs+/,
-  }],
   theme: {
     extend: {
       colors: {
@@ -52,7 +49,9 @@ module.exports = {
               fontWeight: "normal",
             },
             pre: {
-              backgroundColor: theme("colors.zinc.50"),
+              borderWidth: theme("borderWidth.4"),
+              borderRadius: theme("borderRadius.md"),
+              boxShadow: theme("boxShadow.md"),
             },
             "div.math-display": {
               overflow: "auto",
@@ -78,9 +77,6 @@ module.exports = {
           },
         },
       }),
-      fontFamily: {
-        // serif: [...defaultTheme.fontFamily.serif],
-      },
       borderWidth: {
         1: "1px",
       },
