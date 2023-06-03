@@ -1,14 +1,15 @@
 import fs from "fs"
 import { notFound } from "next/navigation"
+import { currentUser, RedirectToSignIn } from "@clerk/nextjs"
 import { MDXRemote } from "next-mdx-remote/rsc"
 
-import { getAllPublicPages, getPageInfoBySlug } from "../../../../api/cms"
+import { getAllPages, getPageInfoBySlug } from "../../../../api/cms"
 import { generateMetadataFromPageInfo } from "../../../../api/metadata"
 import { getMDXOptions } from "../mdx"
 import PageInfo from "../pageInfo"
 
 export async function generateStaticParams() {
-  const allPages = await getAllPublicPages()
+  const allPages = await getAllPages()
   return allPages.map(({ slug }) => ({ slug }))
 }
 
@@ -25,6 +26,14 @@ export default async function Page({ params: { slug } }) {
   const pageInfo = await getPageInfoBySlug(slug)
   if (!pageInfo) {
     return notFound()
+  }
+
+  const { internal } = pageInfo
+  if (internal) {
+    const user = await currentUser()
+    if (!user) {
+      return <RedirectToSignIn />
+    }
   }
 
   const { filePath, ...frontmatter } = pageInfo

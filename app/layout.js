@@ -1,3 +1,5 @@
+import { ClerkProvider } from "@clerk/nextjs"
+
 import "katex/dist/katex.min.css"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
@@ -12,17 +14,22 @@ export const metadata = commonMetadata
 
 export default function Layout({ children }) {
   return (
-    <html lang="en">
-      <script
-        data-goatcounter={`https://${gcCode}.goatcounter.com/count`}
-        async
-        src="//gc.zgo.at/count.js"
-      />
-      <body>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider
+      secretKey={process.env.CLERK_SK}
+      publishableKey={process.env.CLERK_PK}
+    >
+      <html lang="en">
+        <script
+          data-goatcounter={`https://${gcCode}.goatcounter.com/count`}
+          async
+          src="//gc.zgo.at/count.js"
+        />
+        <body>
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
