@@ -1,3 +1,4 @@
+import { ClerkProvider } from '@clerk/nextjs'
 import "katex/dist/katex.min.css"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
@@ -12,6 +13,7 @@ export const metadata = commonMetadata
 
 export default function Layout({ children }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <script
         data-goatcounter={`https://${gcCode}.goatcounter.com/count`}
@@ -24,5 +26,6 @@ export default function Layout({ children }) {
         <Footer />
       </body>
     </html>
+    </ClerkProvider>
   )
 }

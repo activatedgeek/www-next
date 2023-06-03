@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faUserGraduate,
@@ -71,10 +72,11 @@ export default function Footer() {
         />
         <IconLink title="Source Code" icon={faCode} href={code} />
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center align-center">
         <p>
           © {new Date().getFullYear()} {creator}
         </p>
+        <UserButton afterSignOutUrl="/"/>
       </div>
     </div>
   )
