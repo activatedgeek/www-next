@@ -6,8 +6,6 @@ import matter from "gray-matter"
 
 import { baseAuthor } from "@/api/metadata"
 
-export const staticCmsPath = `${process.env.NEXT_WWW_ROOT}/api/cms`
-
 export const areas = {
   cult: {
     label: "Culture",
@@ -84,7 +82,7 @@ export const getAllPages = cache(async function () {
     expandDirectories: { extensions: ["md"] },
   })
 
-  const manualPaths = [`${staticCmsPath}/kb/demo.md`]
+  const manualPaths = [`${process.env.WWW_SRC_ROOT}/api/cms/kb/demo.md`]
 
   const slugger = new GithubSlugger()
   let allPages = await Promise.all(

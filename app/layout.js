@@ -5,7 +5,7 @@ import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
 import "./layout.css"
-import { commonMetadata, gcCode } from "@/api/metadata"
+import { commonMetadata } from "@/api/metadata"
 import Header from "./header"
 import Footer from "./footer"
 
@@ -16,7 +16,7 @@ export default function Layout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <script
-          data-goatcounter={`https://${gcCode}.goatcounter.com/count`}
+          data-goatcounter={`https://${process.env.GC_CODE}.goatcounter.com/count`}
           async
           src="//gc.zgo.at/count.js"
         />

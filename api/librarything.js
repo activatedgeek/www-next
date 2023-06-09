@@ -1,12 +1,12 @@
 export default async function getAllBooks({ count }) {
-  if (process.env.LIBRARYTHING_USERID === undefined) {
+  const userid = process.env.LIBRARYTHING_USERID
+  if (userid === undefined) {
     console.warn(
       "Missing LIBRARYTHING_USERID environment variable. Skipping book library fetch"
     )
     return []
   }
 
-  const userid = process.env.LIBRARYTHING_USERID
   const url = `https://www.librarything.com/api_getdata.php?userid=${userid}&max=${count}&showTags=1&showReviews=1&showCollections=1&responseType=json`
   const lt = await fetch(url).then((res) => res.json())
 

@@ -1,10 +1,10 @@
 import { MovieDb } from "moviedb-promise"
 import format from "date-fns/format"
 
-const apiKey = process.env.TMDB_API_KEY
-const sessionId = process.env.TMDB_SESSION_ID
-
 export async function getFavoriteMovies() {
+  const apiKey = process.env.TMDB_API_KEY
+  const sessionId = process.env.TMDB_SESSION_ID
+
   if (apiKey === undefined) {
     console.warn("Missing TMDB_API_KEY, skip fetching movies.")
     return []
@@ -33,6 +33,9 @@ export async function getFavoriteMovies() {
 }
 
 export async function getFavoriteTv() {
+  const apiKey = process.env.TMDB_API_KEY
+  const sessionId = process.env.TMDB_SESSION_ID
+
   if (apiKey === undefined) {
     console.warn("Missing TMDB_API_KEY, skip fetching movies.")
     return []

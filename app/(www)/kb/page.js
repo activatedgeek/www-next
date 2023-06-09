@@ -2,13 +2,12 @@ import fs from "fs"
 import { MDXRemote } from "next-mdx-remote/rsc"
 import matter from "gray-matter"
 
-import { staticCmsPath } from "@/api/cms"
 import { baseAuthor, generateMetadataFromPageInfo } from "@/api/metadata"
 import { getMDXOptions } from "@/components/mdx"
 import PageInfo from "@/components/pageInfo"
 import AreaLink from "@/components/areaLink"
 
-const filePath = `${staticCmsPath}/kb/page.md`
+const filePath = `${process.env.WWW_SRC_ROOT}/api/cms/kb/page.md`
 
 export const dynamic = "force-static"
 
