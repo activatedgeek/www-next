@@ -3,16 +3,13 @@ import { notFound } from "next/navigation"
 import matter from "gray-matter"
 import { MDXRemote } from "next-mdx-remote/rsc"
 
-import { areas, getAllPublicPagesByArea } from "../../../../../api/cms"
-import {
-  baseAuthor,
-  generateMetadataFromPageInfo,
-} from "../../../../../api/metadata"
-import { getMDXOptions } from "../../mdx"
-import PageInfo from "../../pageInfo"
-import PageList from "../../pageList"
+import { areas, staticCmsPath, getAllPublicPagesByArea } from "@/api/cms"
+import { baseAuthor, generateMetadataFromPageInfo } from "@/api/metadata"
+import { getMDXOptions } from "@/components/mdx"
+import PageInfo from "@/components/pageInfo"
+import PageList from "@/components/pageList"
 
-const overviewFileDir = `${__dirname}/../../../../../../../app/(www)/kb/_www`
+const overviewFileDir = `${staticCmsPath}/kb/overview`
 
 export const dynamic = "force-static"
 

@@ -1,6 +1,6 @@
-import { getAllPublicPages } from "../../../api/cms"
-import { generateMetadataFromPageInfo } from "../../../api/metadata"
-import PageList from "../kb/pageList"
+import { getAllPublicPages } from "@/api/cms"
+import { generateMetadataFromPageInfo } from "@/api/metadata"
+import PageList from "@/components/pageList"
 
 const pageInfo = {
   title: "Database of Pages",

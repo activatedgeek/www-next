@@ -2,12 +2,12 @@ import fs from "fs"
 import { notFound } from "next/navigation"
 import { MDXRemote } from "next-mdx-remote/rsc"
 
-import { getLatestPages, getPageInfoBySlug } from "../../api/cms"
-import { generateMetadataFromPageInfo } from "../../api/metadata"
-import { getMDXOptions } from "./kb/mdx"
-import PageInfo from "./kb/pageInfo"
+import { getLatestPages, getPageInfoBySlug } from "@/api/cms"
+import { generateMetadataFromPageInfo } from "@/api/metadata"
+import { getMDXOptions } from "@/components/mdx"
+import PageInfo from "@/components/pageInfo"
+import PageList from "@/components/pageList"
 import Layout from "./kb/layout"
-import PageList from "./kb/pageList"
 
 export const dynamic = "force-static"
 

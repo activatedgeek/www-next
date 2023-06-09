@@ -1,10 +1,7 @@
 import format from "date-fns/format"
-import { getFavoriteMovies, getFavoriteTv } from "../../../../api/tmdb"
-import {
-  baseAuthor,
-  generateMetadataFromPageInfo,
-} from "../../../../api/metadata"
-import PageInfo from "../../kb/pageInfo"
+import { getFavoriteMovies, getFavoriteTv } from "@/api/tmdb"
+import { baseAuthor, generateMetadataFromPageInfo } from "@/api/metadata"
+import PageInfo from "@/components/pageInfo"
 
 const frontmatter = {
   title: "My Movies & Library",

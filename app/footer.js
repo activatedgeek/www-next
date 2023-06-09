@@ -12,7 +12,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons"
 
-import { creator, social } from "../api/metadata"
+import { creator, social } from "@/api/metadata"
 
 const IconLink = ({ title, icon, href, color }) => (
   <a

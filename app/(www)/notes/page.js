@@ -1,6 +1,6 @@
-import { getAllInternalPages } from "../../../api/cms"
-import { generateMetadataFromPageInfo } from "../../../api/metadata"
-import PageList from "../kb/pageList"
+import { getAllInternalPages } from "@/api/cms"
+import { generateMetadataFromPageInfo } from "@/api/metadata"
+import PageList from "@/components/pageList"
 
 const pageInfo = {
   title: "Private Notes",

@@ -1,10 +1,7 @@
-import getAllBooks from "../../../../api/librarything"
-import {
-  baseAuthor,
-  generateMetadataFromPageInfo,
-} from "../../../../api/metadata"
-import PageInfo from "../../kb/pageInfo"
-import Rating from "./rating"
+import getAllBooks from "@/api/librarything"
+import { baseAuthor, generateMetadataFromPageInfo } from "@/api/metadata"
+import PageInfo from "@/components/pageInfo"
+import Rating from "@/components/rating"
 
 const frontmatter = {
   title: "My Book Library",

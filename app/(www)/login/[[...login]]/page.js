@@ -1,6 +1,6 @@
 import { SignIn } from "@clerk/nextjs"
 
-import { generateMetadataFromPageInfo } from "../../../../api/metadata"
+import { generateMetadataFromPageInfo } from "@/api/metadata"
 
 const pageInfo = {
   title: "Login",

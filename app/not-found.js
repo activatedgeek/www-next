@@ -1,9 +1,9 @@
 import Link from "next/link"
 
-import { getLatestPages } from "../api/cms"
+import { getLatestPages } from "@/api/cms"
 
 import Layout from "./(www)/kb/layout"
-import PageList from "./(www)/kb/pageList"
+import PageList from "@/components/pageList"
 
 export default async function NotFound() {
   const latestPages = await getLatestPages(17)

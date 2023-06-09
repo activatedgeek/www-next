@@ -2,10 +2,10 @@ import fs from "fs"
 import { notFound } from "next/navigation"
 import { MDXRemote } from "next-mdx-remote/rsc"
 
-import { getAllPublicPages, getPageInfoBySlug } from "../../../../api/cms"
-import { generateMetadataFromPageInfo } from "../../../../api/metadata"
-import { getMDXOptions } from "../mdx"
-import PageInfo from "../pageInfo"
+import { getAllPublicPages, getPageInfoBySlug } from "@/api/cms"
+import { generateMetadataFromPageInfo } from "@/api/metadata"
+import { getMDXOptions } from "@/components/mdx"
+import PageInfo from "@/components/pageInfo"
 
 export const dynamic = "force-static"
 
@@ -40,9 +40,11 @@ export async function KB(frontmatter, source) {
 
 export default async function Page({ params: { slug } }) {
   const pageInfo = await getPageInfoBySlug(slug)
+  if (!pageInfo) {
+    return notFound()
+  }
   const { filePath, internal, ...frontmatter } = pageInfo
-
-  if (!pageInfo || internal) {
+  if (internal) {
     return notFound()
   }
 

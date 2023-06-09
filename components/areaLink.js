@@ -1,7 +1,7 @@
 import emoji from "node-emoji"
 import Link from "next/link"
 
-import { areas } from "../../../api/cms"
+import { areas } from "@/api/cms"
 
 export default function AreaLink({ area }) {
   const { textColor, bgColor, ringColor, emoji_code } = areas[area]

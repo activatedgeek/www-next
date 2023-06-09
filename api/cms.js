@@ -4,7 +4,9 @@ import { globby } from "globby"
 import GithubSlugger from "github-slugger"
 import matter from "gray-matter"
 
-import { baseAuthor } from "./metadata"
+import { baseAuthor } from "@/api/metadata"
+
+export const staticCmsPath = `${process.env.NEXT_WWW_ROOT}/api/cms`
 
 export const areas = {
   cult: {
@@ -82,9 +84,11 @@ export const getAllPages = cache(async function () {
     expandDirectories: { extensions: ["md"] },
   })
 
+  const manualPaths = [`${staticCmsPath}/kb/demo.md`]
+
   const slugger = new GithubSlugger()
   let allPages = await Promise.all(
-    rawPaths.map(async (filePath) => {
+    [...rawPaths, ...manualPaths].map(async (filePath) => {
       const rawString = await fs.readFile(filePath)
       const {
         data: {
