@@ -1,8 +1,9 @@
-import { UserButton } from "@clerk/nextjs"
 import Link from "next/link"
 import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBrain, faHome } from "@fortawesome/free-solid-svg-icons"
+
+import SignedInNav from "./signedInNav"
 
 export default function Header() {
   return (
@@ -17,13 +18,19 @@ export default function Header() {
         />
       </Link>
       <div className="flex items-center">
-        <Link className="mx-4 text-link" href="/kb">
-          <FontAwesomeIcon icon={faBrain} /> KB
-        </Link>
-        <Link className="mx-4 text-link" href="/">
+        <Link
+          className="mr-3 p-2 text-link rounded-md hover:bg-zinc-50"
+          href="/"
+        >
           <FontAwesomeIcon icon={faHome} /> Home
         </Link>
-        <UserButton afterSignOutUrl="/" />
+        <Link
+          className="mr-3 p-2 text-link rounded-md hover:bg-zinc-50"
+          href="/kb"
+        >
+          <FontAwesomeIcon icon={faBrain} /> K.B.
+        </Link>
+        <SignedInNav />
       </div>
     </div>
   )
