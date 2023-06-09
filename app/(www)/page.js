@@ -9,6 +9,8 @@ import PageInfo from "./kb/pageInfo"
 import Layout from "./kb/layout"
 import PageList from "./kb/pageList"
 
+export const dynamic = "force-static"
+
 export async function generateMetadata() {
   const pageInfo = await getPageInfoBySlug("about")
   if (!pageInfo) {

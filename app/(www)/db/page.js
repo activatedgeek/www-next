@@ -8,6 +8,8 @@ const pageInfo = {
   slug: "db",
 }
 
+export const dynamic = "force-static"
+
 export const metadata = generateMetadataFromPageInfo(pageInfo)
 
 export default async function DB() {

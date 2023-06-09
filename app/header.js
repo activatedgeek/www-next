@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs"
 import Link from "next/link"
 import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -22,6 +23,7 @@ export default function Header() {
         <Link className="mx-4 text-link" href="/">
           <FontAwesomeIcon icon={faHome} /> Home
         </Link>
+        <UserButton afterSignOutUrl="/" />
       </div>
     </div>
   )

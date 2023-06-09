@@ -14,6 +14,8 @@ const frontmatter = {
   authors: [baseAuthor],
 }
 
+export const dynamic = "force-static"
+
 export const metadata = generateMetadataFromPageInfo(frontmatter)
 
 export default async function Books() {

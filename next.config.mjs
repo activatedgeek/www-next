@@ -2,6 +2,9 @@ export default {
   images: {
     domains: ["images-na.ssl-images-amazon.com", "pics.cdn.librarything.com"],
   },
+  env: {
+    NEXT_PUBLIC_CLERK_SIGN_IN_URL: '/login',
+  },
   eslint: {
     dirs: ["api", "app"],
   },

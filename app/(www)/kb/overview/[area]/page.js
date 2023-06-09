@@ -14,6 +14,8 @@ import PageList from "../../pageList"
 
 const overviewFileDir = `${__dirname}/../../../../../../../app/(www)/kb/_www`
 
+export const dynamic = "force-static"
+
 export async function generateStaticParams() {
   return Object.keys(areas).map((area) => ({ area }))
 }

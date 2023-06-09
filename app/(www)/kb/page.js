@@ -9,6 +9,8 @@ import AreaLink from "./areaLink"
 
 const filePath = `${__dirname}/../../../../../app/(www)/kb/_www/kb.md`
 
+export const dynamic = "force-static"
+
 export async function generateMetadata() {
   const source = await fs.promises.readFile(filePath, "utf8")
   const { data: pageInfo } = matter(source)

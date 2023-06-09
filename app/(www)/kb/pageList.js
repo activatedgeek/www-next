@@ -2,7 +2,7 @@ import format from "date-fns/format"
 import Link from "next/link"
 import AreaLink from "./areaLink"
 
-export default function PageList({ title, pages }) {
+export default function PageList({ title, pages, slugPrefix }) {
   return (
     <>
       {title ? <h2>{title}</h2> : null}
@@ -16,7 +16,7 @@ export default function PageList({ title, pages }) {
                 </span>
               </td>
               <td>
-                <Link className="mr-3" href={`/kb/${slug}`}>
+                <Link className="mr-3" href={`/${slugPrefix || "kb"}/${slug}`}>
                   {_t}
                 </Link>
                 <AreaLink area={area} />
