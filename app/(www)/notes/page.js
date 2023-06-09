@@ -9,6 +9,8 @@ const pageInfo = {
   internal: true,
 }
 
+export const dynamic = "force-static"
+
 export const metadata = generateMetadataFromPageInfo(pageInfo)
 
 export default async function PrivateDB() {

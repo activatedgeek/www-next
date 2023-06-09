@@ -3,7 +3,7 @@
 
 /* theme external rules here. */
 div.cl-rootBox {
-    @apply mx-4;
+  @apply mx-4;
 }
 
 @tailwind utilities;

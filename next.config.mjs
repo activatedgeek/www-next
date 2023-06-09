@@ -6,7 +6,7 @@ export default {
     NEXT_PUBLIC_CLERK_SIGN_IN_URL: '/login',
   },
   eslint: {
-    dirs: ["api", "app"],
+    dirs: ["api", "app", "components"],
   },
   async redirects() {
     let allRedirects = [
