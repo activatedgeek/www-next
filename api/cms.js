@@ -73,11 +73,11 @@ export const areas = {
 }
 
 export const getAllPages = cache(async function () {
-  if (process.env.KB_DIR === undefined) {
-    throw new Error("Missing KB_DIR environment variable.")
+  const baseDir = process.env.WWW_KB_DIR
+  if (!baseDir) {
+    throw new Error("Missing WWW_KB_DIR environment variable.")
   }
 
-  const baseDir = `${process.env.KB_DIR}/www`
   const rawPaths = await globby([baseDir], {
     expandDirectories: { extensions: ["md"] },
   })

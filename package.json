@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "private": true,
   "scripts": {
-    "build": "WWW_SRC_ROOT=\"$(pwd)\" next build",
+    "build": "next build",
     "dev": "WWW_SRC_ROOT=\"$(pwd)\" next dev",
     "fmt": "prettier --write \"{api,app}/**/*.{js,css}\" *.config.js",
     "lint": "next lint",

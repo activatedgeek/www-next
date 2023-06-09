@@ -2,6 +2,9 @@
 @tailwind components;
 
 /* theme external rules here. */
+div.cl-rootBox {
+    @apply mx-4;
+}
 
 @tailwind utilities;
 @tailwind variants;

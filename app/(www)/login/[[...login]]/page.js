@@ -5,9 +5,8 @@ import { generateMetadataFromPageInfo } from "@/api/metadata"
 const pageInfo = {
   title: "Login",
   slug: "login",
+  internal: true,
 }
-
-export const dynamic = "force-static"
 
 export const metadata = generateMetadataFromPageInfo(pageInfo)
 
