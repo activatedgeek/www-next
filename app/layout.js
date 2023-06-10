@@ -13,7 +13,19 @@ export const metadata = commonMetadata
 
 export default function Layout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        layout: {
+          logoImageUrl: "/favicon.svg",
+        },
+        elements: {
+          rootBox: "flex w-full",
+          card: "mx-auto shadow-md",
+          formButtonPrimary: "bg-blue-500 hover:bg-blue-600",
+          footer: "hidden",
+        },
+      }}
+    >
       <html lang="en">
         <script
           data-goatcounter={`https://${process.env.GC_CODE}.goatcounter.com/count`}
