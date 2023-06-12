@@ -7,7 +7,7 @@ export default function AreaLink({ area }) {
   const { textColor, bgColor, ringColor, emoji_code } = areas[area]
   return (
     <Link
-      className={`inline-flex items-center rounded-md bg-neutral-50 px-2 py-1 text-sm ${textColor} hover:shadow-md ring-1 ring-inset ${bgColor} ${ringColor}`}
+      className={`inline-flex items-center rounded-md px-2 py-1 text-sm ${textColor} hover:shadow-md ring-1 ring-inset ${bgColor} ${ringColor}`}
       href={`/kb/overview/${area}`}
     >
       {emoji.get(emoji_code)} {area}

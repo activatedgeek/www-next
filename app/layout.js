@@ -19,7 +19,6 @@ export default function Layout({ children }) {
           logoImageUrl: "/favicon.svg",
         },
         elements: {
-          rootBox: "flex w-full",
           card: "mx-auto shadow-md",
           formButtonPrimary: "bg-blue-500 hover:bg-blue-600",
           footer: "hidden",

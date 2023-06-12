@@ -8,21 +8,22 @@ import {
 
 import AreaLink from "./areaLink"
 
-export default function PageInfo({ title, date, updated, area }) {
+export default function PageInfo({ title, description, date, updated, area }) {
   return (
     <>
       <h1 className="!mb-0">{title}</h1>
-      <div className="flex flex-row flex-wrap items-center py-2 lg:text-lg md:text-md sm:text-sm text-gray-500 border-b border-gray-300">
+      <span className="text-gray-500">{description}</span>
+      <div className="flex flex-row flex-wrap items-center py-2 text-sm">
         {date ? (
-          <span className="inline-block mr-6">
+          <span className="inline-block mr-3">
             <FontAwesomeIcon icon={faCalendarDay} className="mr-2" />
-            {format(new Date(date), "MMM d, yyyy")}
+            <span className="rounded-md px-2 py-1 text-slate-500 ring-1 ring-inset bg-slate-100 ring-slate-500">{format(new Date(date), "MMM d, yyyy")}</span>
           </span>
         ) : null}
         {updated ? (
-          <span className="inline-block mr-6">
+          <span className="inline-block mr-3">
             <FontAwesomeIcon icon={faCalendarPlus} className="mr-2" />
-            Last updated: {format(new Date(updated), "MMM d, yyyy")}
+            <span className="rounded-md px-2 py-1 text-slate-500 ring-1 ring-inset bg-slate-100 ring-slate-500">Last updated: {format(new Date(updated), "MMM d, yyyy")}</span>
           </span>
         ) : null}
         <div className="inline-flex flex-nowrap items-center">
@@ -30,6 +31,7 @@ export default function PageInfo({ title, date, updated, area }) {
           <AreaLink area={area} />
         </div>
       </div>
+      <hr className="!mt-1 !mb-6 border-b border-1 border-gray-300" />
     </>
   )
 }
