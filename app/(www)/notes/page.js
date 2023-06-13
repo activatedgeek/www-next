@@ -3,8 +3,8 @@ import { generateMetadataFromPageInfo } from "@/api/metadata"
 import PageList from "@/components/pageList"
 
 const pageInfo = {
-  title: "Private Notes",
-  description: "Archive of all private pages on the website.",
+  title: "Notes",
+  description: "Archive of all private notes on the website.",
   slug: "notes",
   internal: true,
 }
