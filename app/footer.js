@@ -3,6 +3,7 @@ import {
   faUserGraduate,
   faCode,
   faArchive,
+  faNoteSticky,
 } from "@fortawesome/free-solid-svg-icons"
 import {
   faGithub,
@@ -32,6 +33,7 @@ export default function Footer() {
   return (
     <div className="mx-auto mt-6 border-t-2 border-gray-300 p-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl text-gray-500">
       <div className="flex justify-center text-xl">
+        <IconLink title="Archive" icon={faNoteSticky} href="/notes" />
         <IconLink title="Archive" icon={faArchive} href="/db" />
         <IconLink
           title="Semantic Scholar"
