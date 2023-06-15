@@ -12,7 +12,7 @@ export async function GET(req, res) {
   const storkConfig = {
     input: {
       base_directory: process.env.WWW_KB_DIR,
-      url_prefix: `${baseUrl}/kb`,
+      url_prefix: `${baseUrl}/kb/`,
       frontmatter_handling: "Omit",
       files: (await getAllPublicPages()).map(({ filePath, title, slug }) => ({
         path: filePath,
