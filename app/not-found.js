@@ -23,12 +23,11 @@ export default async function NotFound() {
         <figcaption>https://xkcd.com/2303/</figcaption>
       </figure>
       <p>
-        Have something in mind? Generally, a good place to start is{" "}
-        <Link href="/kb">here</Link>.
+        Have something in mind? Try a <Link href="/search">search</Link> or just
+        browse the <Link href="/kb">knowledge base</Link>.
       </p>
       <p>
-        Or now that you&apos;ve arrived, check some of the recently updated
-        pages.
+        Nothing in mind? Check some of the recently updated pages.
       </p>
       <PageList title="Latest Pages" pages={latestPages} />
     </Layout>
