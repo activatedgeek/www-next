@@ -54,7 +54,7 @@ module.exports = {
               fontWeight: "normal",
             },
             pre: {
-              borderWidth: theme("borderWidth.4"),
+              borderWidth: theme("borderWidth.8"),
               borderRadius: theme("borderRadius.md"),
               boxShadow: theme("boxShadow.md"),
             },

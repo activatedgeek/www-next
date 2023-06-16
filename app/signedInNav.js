@@ -9,7 +9,7 @@ export default function SignedInNav() {
   return (
     <SignedIn>
       <Link
-        className="mx-1 p-2 text-link rounded-md hover:bg-zinc-50 hover:!bg-blue-600 hover:text-white"
+        className="mx-1 p-2 text-link rounded-md hover:bg-blue-50"
         href="/notes"
       >
         <FontAwesomeIcon icon={faNoteSticky} /> Notes

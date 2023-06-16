@@ -1,8 +1,10 @@
 "use client"
 
 import Script from "next/script"
+import { useSearchParams } from 'next/navigation'
 
 export default function StorkSearch() {
+    const q = useSearchParams().get('q')
     return (
         <div className="stork-wrapper">
             <Script
@@ -11,7 +13,7 @@ export default function StorkSearch() {
                     stork.register("kb", "/kb-index.st")
                 }}
             />
-            <input type="search" data-stork="kb" className="stork-input p-3 rounded shadow-md w-full" placeholder="Search here..." />
+            <input type="search" defaultValue={q} data-stork="kb" className="stork-input" placeholder="Search here..." style={{ outline: 'none' }} />
             <div data-stork="kb-output" className="stork-output" />
         </div>
     )

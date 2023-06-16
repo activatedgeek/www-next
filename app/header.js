@@ -1,7 +1,11 @@
 import Link from "next/link"
 import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBrain, faHome, faSearch } from "@fortawesome/free-solid-svg-icons"
+import {
+  faBrain,
+  faHome,
+  faSearchPlus,
+} from "@fortawesome/free-solid-svg-icons"
 
 import SignedInNav from "./signedInNav"
 
@@ -20,17 +24,17 @@ export default function Header() {
         </Link>
       </div>
       <div className="ml-3 flex items-center">
-        <div className="mx-1 p-2 text-link rounded-md cursor-pointer hover:bg-zinc-50 hover:!bg-blue-600 hover:text-white">
+        <div className="mx-1 p-2 text-link rounded-md cursor-pointer hover:bg-blue-50">
           <Link href="/search">
-            <FontAwesomeIcon icon={faSearch} /> Search
+            <FontAwesomeIcon icon={faSearchPlus} /> Search
           </Link>
         </div>
-        <div className="mx-1 p-2 text-link rounded-md cursor-pointer hover:bg-zinc-50 hover:!bg-blue-600 hover:text-white">
+        <div className="mx-1 p-2 text-link rounded-md cursor-pointer hover:bg-blue-50">
           <Link href="/">
             <FontAwesomeIcon icon={faHome} /> Home
           </Link>
         </div>
-        <div className="mx-1 p-2 text-link rounded-md cursor-pointer hover:bg-zinc-50 hover:!bg-blue-600 hover:text-white">
+        <div className="mx-1 p-2 text-link rounded-md cursor-pointer hover:bg-blue-50">
           <Link href="/kb">
             <FontAwesomeIcon icon={faBrain} /> K.B.
           </Link>

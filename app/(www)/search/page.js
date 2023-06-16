@@ -1,3 +1,5 @@
+import "./search.css"
+
 import { generateMetadataFromPageInfo } from "@/api/metadata"
 
 import StorkSearch from "@/components/search"

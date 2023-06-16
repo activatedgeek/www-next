@@ -1,0 +1,27 @@
+input.stork-input {
+  @apply p-3 rounded shadow-md ring-1 ring-slate-300 w-full outline-none;
+}
+button.stork-close-button {
+  @apply hidden;
+}
+div.stork-message {
+  @apply text-gray-500;
+}
+ul.stork-results {
+  @apply p-0;
+}
+li.stork-result {
+  @apply border-8 p-4 rounded;
+}
+div.stork-title > p {
+  @apply font-serif text-2xl my-0;
+}
+div.stork-excerpt-container {
+  @apply p-4;
+}
+div.stork-excerpt > p {
+  @apply text-neutral-600;
+}
+li.stork-result::marker {
+  content: none;
+}
