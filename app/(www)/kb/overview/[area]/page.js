@@ -9,7 +9,7 @@ import { getMDXOptions } from "@/components/mdx"
 import PageInfo from "@/components/pageInfo"
 import PageList from "@/components/pageList"
 
-const overviewFileDir = `${process.env.WWW_SRC_ROOT}/api/cms/kb/overview`
+const overviewFileDir = `${process.env.WWW_MD_ROOT}/overview`
 
 export const dynamic = "force-static"
 

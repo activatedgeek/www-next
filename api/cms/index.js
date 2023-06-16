@@ -82,7 +82,7 @@ export const getAllPages = cache(async function () {
     expandDirectories: { extensions: ["md"] },
   })
 
-  const manualPaths = [`${process.env.WWW_SRC_ROOT}/api/cms/kb/demo.md`]
+  const manualPaths = [`${process.env.WWW_MD_ROOT}/demo.md`]
 
   const slugger = new GithubSlugger()
   let allPages = await Promise.all(

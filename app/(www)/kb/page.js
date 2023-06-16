@@ -7,7 +7,7 @@ import { getMDXOptions } from "@/components/mdx"
 import PageInfo from "@/components/pageInfo"
 import AreaLink from "@/components/areaLink"
 
-const filePath = `${process.env.WWW_SRC_ROOT}/api/cms/kb/page.md`
+const filePath = `${process.env.WWW_MD_ROOT}/page.md`
 
 export const dynamic = "force-static"
 

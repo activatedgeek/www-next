@@ -26,9 +26,7 @@ export default async function NotFound() {
         Have something in mind? Try a <Link href="/search">search</Link> or just
         browse the <Link href="/kb">knowledge base</Link>.
       </p>
-      <p>
-        Nothing in mind? Check some of the recently updated pages.
-      </p>
+      <p>Nothing in mind? Check some of the recently updated pages.</p>
       <PageList title="Latest Pages" pages={latestPages} />
     </Layout>
   )

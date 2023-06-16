@@ -1,10 +1,10 @@
 {
   "name": "sanyamkapoor.com",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "WWW_SRC_ROOT=\"$(pwd)\" next dev",
+    "dev": "next dev",
     "dl": "curl -o public/kb-index.st https://f.sanyamkapoor.com/kb-index.st && curl -o public/cv.pdf https://f.sanyamkapoor.com/cv.pdf",
     "fmt": "prettier --write \"{api,app}/**/*.{js,css}\" *.config.js",
     "lint": "next lint",

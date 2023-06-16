@@ -1,9 +1,10 @@
-export default {
+module.exports = {
   images: {
     domains: ["images-na.ssl-images-amazon.com", "pics.cdn.librarything.com"],
   },
   env: {
-    NEXT_PUBLIC_CLERK_SIGN_IN_URL: '/login',
+    NEXT_PUBLIC_CLERK_SIGN_IN_URL: "/login",
+    WWW_MD_ROOT: `${__dirname}/api/cms/kb`,
   },
   eslint: {
     dirs: ["api", "app", "components"],
