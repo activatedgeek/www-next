@@ -82,11 +82,9 @@ export const getAllPages = cache(async function () {
     expandDirectories: { extensions: ["md"] },
   })
 
-  const manualPaths = [`${process.env.WWW_MD_ROOT}/demo.md`]
-
   const slugger = new GithubSlugger()
   let allPages = await Promise.all(
-    [...rawPaths, ...manualPaths].map(async (filePath) => {
+    rawPaths.map(async (filePath) => {
       const rawString = await fs.readFile(filePath)
       const {
         data: {

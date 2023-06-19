@@ -1,6 +1,6 @@
 const fs = require("fs").promises
 const matter = require("gray-matter")
-const TOML = require('@iarna/toml')
+const TOML = require("@iarna/toml")
 
 async function getStorkConfig() {
   const baseDir = process.env.WWW_KB_DIR
@@ -50,6 +50,6 @@ async function getStorkConfig() {
 
 getStorkConfig().then((storkConfig) => {
   fs.writeFile("public/index.toml", TOML.stringify(storkConfig), (err) => {
-    if (err) throw err;
-  });
+    if (err) throw err
+  })
 })
