@@ -10,7 +10,7 @@ export default function StorkSearch() {
             <Script
                 src="https://files.stork-search.net/releases/v1.6.0/stork.js"
                 onLoad={() => {
-                    stork.register("kb", "/kb-index.st")
+                    stork.register("kb", "/index.st")
                 }}
             />
             <input type="search" defaultValue={q} data-stork="kb" className="stork-input" placeholder="Search here..." style={{ outline: 'none' }} />

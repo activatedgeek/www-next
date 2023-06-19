@@ -1,7 +1,5 @@
 # www-next
 
-![Vercel](https://vercelbadge.vercel.app/api/activatedgeek/www-next)
-
 Base framework to generate my website based on [Next.js](https://nextjs.org).
 Website & knowledge base hosted at [sanyamkapoor.com](https://sanyamkapoor.com).
 See details on the stack [here](https://sanyamkapoor.com/kb/the-stack).
