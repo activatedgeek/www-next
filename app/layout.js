@@ -1,3 +1,4 @@
+import Script from "next/script"
 import { ClerkProvider } from "@clerk/nextjs"
 import "katex/dist/katex.min.css"
 import "@fortawesome/fontawesome-svg-core/styles.css"
@@ -26,7 +27,7 @@ export default function Layout({ children }) {
       }}
     >
       <html lang="en">
-        <script
+        <Script
           data-goatcounter={`https://${process.env.GC_CODE}.goatcounter.com/count`}
           async
           src="//gc.zgo.at/count.js"
