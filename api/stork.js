@@ -2,12 +2,6 @@ const fs = require("fs").promises
 const matter = require("gray-matter")
 const TOML = require('@iarna/toml')
 
-const BASE_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://sanyamkapoor.com"
-    : `${process.env.VERCEL_URL || "http://localhost:3000"}`
-const INDEX_JSON_FILE = "public/index.toml"
-
 async function getStorkConfig() {
   const baseDir = process.env.WWW_KB_DIR
   if (!baseDir) {
@@ -48,7 +42,6 @@ async function getStorkConfig() {
 
   return {
     input: {
-      url_prefix: BASE_URL,
       frontmatter_handling: "Omit",
       files,
     },
@@ -56,7 +49,7 @@ async function getStorkConfig() {
 }
 
 getStorkConfig().then((storkConfig) => {
-  fs.writeFile(INDEX_JSON_FILE, TOML.stringify(storkConfig), (err) => {
+  fs.writeFile("public/index.toml", TOML.stringify(storkConfig), (err) => {
     if (err) throw err;
   });
 })
