@@ -4,7 +4,7 @@ import { generateMetadataFromPageInfo } from "@/api/metadata"
 
 const pageInfo = {
   title: "Login",
-  slug: "login",
+  uri: "login",
   internal: true,
 }
 

@@ -1,46 +1,19 @@
-import fs from "fs"
-import { notFound } from "next/navigation"
-import { MDXRemote } from "next-mdx-remote/rsc"
-
-import { getLatestPages, getPageInfoBySlug } from "@/api/cms"
-import { generateMetadataFromPageInfo } from "@/api/metadata"
-import { getMDXOptions } from "@/components/mdx"
-import PageInfo from "@/components/pageInfo"
-import PageList from "@/components/pageList"
 import Layout from "./kb/layout"
+import { getLatestPages } from "@/api/cms"
+import PageList from "@/components/pageList"
+import Page, { generateMetadata as _generateMetadata } from "./kb/[slug]/page"
 
 export const dynamic = "force-static"
 
 export async function generateMetadata() {
-  const pageInfo = await getPageInfoBySlug("about")
-  if (!pageInfo) {
-    return null
-  }
-
-  return generateMetadataFromPageInfo({ ...pageInfo, slug: "/" })
+  return await _generateMetadata({ params: { slug: "/" } })
 }
 
-export default async function Page() {
-  const pageInfo = await getPageInfoBySlug("about")
-  if (!pageInfo) {
-    return notFound()
-  }
-
+export default async function HomePage() {
   const latestPages = await getLatestPages(17)
-
-  const { filePath, ...frontmatter } = pageInfo
-  const source = await fs.promises.readFile(filePath, "utf8")
-
   return (
     <Layout>
-      <PageInfo {...frontmatter} />
-      <MDXRemote
-        source={source}
-        options={{
-          mdxOptions: await getMDXOptions(),
-          parseFrontmatter: true,
-        }}
-      />
+      {await Page({ params: { slug: "/" } })}
       <PageList title="Latest Pages" pages={latestPages} />
     </Layout>
   )

@@ -2,8 +2,7 @@ import fs from "fs"
 import { notFound } from "next/navigation"
 
 import { getAllInternalPages, getPageInfoBySlug } from "@/api/cms"
-import { generateMetadataFromPageInfo } from "@/api/metadata"
-import { KB } from "../../kb/[slug]/page"
+import { KB, generateMetadata as _generateMetadata } from "../../kb/[slug]/page"
 
 export const dynamic = "force-static"
 
@@ -13,12 +12,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params: { slug } }, _) {
-  const pageInfo = await getPageInfoBySlug(slug)
-  if (!pageInfo) {
-    return null
-  }
-
-  return generateMetadataFromPageInfo({ ...pageInfo, slug: `/notes/${slug}` })
+  return await _generateMetadata({ params: { slug } })
 }
 
 export default async function Page({ params: { slug } }) {
@@ -33,5 +27,5 @@ export default async function Page({ params: { slug } }) {
 
   const source = await fs.promises.readFile(filePath, "utf8")
 
-  return await KB(frontmatter, source)
+  return await KB({ frontmatter, source })
 }

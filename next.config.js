@@ -18,13 +18,17 @@ async function getAllRedirects() {
     rawPaths.map(async (filePath) => {
       const rawString = await fs.readFile(filePath)
       const {
-        data: { title, slug: _slug, redirectsFrom },
+        data: { title, slug: _slug, internal: _internal, redirectsFrom },
       } = matter(rawString)
       const slug = _slug ? _slug : slugger.slug(title)
+      const internal = _internal ? Boolean(_internal) : false
+      const uri = slug.startsWith("/")
+        ? slug
+        : `/${internal ? "notes" : "kb"}/${slug}`
       if (redirectsFrom) {
         return redirectsFrom.map((source) => ({
           source,
-          destination: `/kb/${slug}`,
+          destination: uri,
           permanent: true,
         }))
       }
@@ -46,9 +50,6 @@ module.exports = {
     dirs: ["api", "app", "components"],
   },
   async redirects() {
-    return [
-      { source: "/kb/about", destination: "/", permanent: true },
-      ...(await getAllRedirects()),
-    ]
+    return [...(await getAllRedirects())]
   },
 }

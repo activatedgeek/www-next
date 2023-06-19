@@ -7,7 +7,7 @@ import StorkSearch from "@/components/search"
 const pageInfo = {
   title: "Search",
   description: "Search knowledge base.",
-  slug: "search",
+  uri: "search",
 }
 
 export const dynamic = "force-static"

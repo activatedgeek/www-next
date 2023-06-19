@@ -5,7 +5,7 @@ import PageList from "@/components/pageList"
 const pageInfo = {
   title: "Database of Pages",
   description: "Archive of all pages on the website.",
-  slug: "db",
+  uri: "db",
 }
 
 export const dynamic = "force-static"

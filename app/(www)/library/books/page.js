@@ -7,7 +7,7 @@ const frontmatter = {
   title: "My Book Library",
   description: "My book library hosted on LibraryThing",
   area: "cult",
-  slug: "library/books",
+  uri: "library/books",
   authors: [baseAuthor],
 }
 

@@ -7,7 +7,7 @@ const frontmatter = {
   title: "My Movies & Library",
   description: "My movies and TV favorites hosted on TMDb.",
   area: "cult",
-  slug: "library/tv",
+  uri: "library/tv",
   authors: [baseAuthor],
 }
 

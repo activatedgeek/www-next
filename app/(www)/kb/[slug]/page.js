@@ -5,6 +5,7 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 import { getAllPublicPages, getPageInfoBySlug } from "@/api/cms"
 import { generateMetadataFromPageInfo } from "@/api/metadata"
 import { getMDXOptions } from "@/components/mdx"
+import AreaLink from "@/components/areaLink"
 import PageInfo from "@/components/pageInfo"
 
 export const dynamic = "force-static"
@@ -14,21 +15,22 @@ export async function generateStaticParams() {
   return allPages.map(({ slug }) => ({ slug }))
 }
 
-export async function generateMetadata({ params: { slug } }, _) {
+export async function generateMetadata({ params: { slug } }) {
   const pageInfo = await getPageInfoBySlug(slug)
   if (!pageInfo) {
     return null
   }
 
-  return generateMetadataFromPageInfo({ ...pageInfo, slug: `/kb/${slug}` })
+  return generateMetadataFromPageInfo(pageInfo)
 }
 
-export async function KB(frontmatter, source) {
+export async function KB({ frontmatter, source }) {
   return (
     <>
       <PageInfo {...frontmatter} />
       <MDXRemote
         source={source}
+        components={{ AreaLink }}
         options={{
           mdxOptions: await getMDXOptions(),
           parseFrontmatter: true,
@@ -50,5 +52,5 @@ export default async function Page({ params: { slug } }) {
 
   const source = await fs.promises.readFile(filePath, "utf8")
 
-  return await KB(frontmatter, source)
+  return await KB({ frontmatter, source })
 }

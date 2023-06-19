@@ -103,6 +103,9 @@ export const getAllPages = cache(async function () {
       const slug = _slug ? _slug : slugger.slug(title)
       const internal = _internal ? Boolean(_internal) : false
       const authors = _authors ? [baseAuthor, ..._authors] : [baseAuthor]
+      const uri = slug.startsWith("/")
+        ? slug
+        : `/${internal ? "notes" : "kb"}/${slug}`
       return {
         filePath,
         title,
@@ -110,6 +113,7 @@ export const getAllPages = cache(async function () {
         authors,
         area,
         slug,
+        uri,
         date: new Date(date),
         updated: new Date(_updated || date),
         internal,

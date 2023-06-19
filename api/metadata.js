@@ -40,7 +40,7 @@ export const commonMetadata = {
 }
 
 export function generateMetadataFromPageInfo(pageInfo) {
-  const { title, description, authors, date, updated, internal, area, slug } =
+  const { title, description, authors, date, updated, internal, area, uri } =
     pageInfo
 
   return {
@@ -49,7 +49,7 @@ export function generateMetadataFromPageInfo(pageInfo) {
     keywords: [area],
     authors,
     alternates: {
-      canonical: slug,
+      canonical: uri,
     },
     openGraph: {
       type: "article",

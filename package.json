@@ -5,7 +5,6 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "dl": "curl -o public/kb-index.st https://f.sanyamkapoor.com/kb-index.st && curl -o public/cv.pdf https://f.sanyamkapoor.com/cv.pdf",
     "fmt": "prettier --write \"{api,app}/**/*.{js,css}\" *.config.js",
     "lint": "next lint",
     "start": "next start"
