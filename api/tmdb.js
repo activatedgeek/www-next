@@ -6,7 +6,7 @@ export async function getFavoriteMovies() {
   const sessionId = process.env.TMDB_SESSION_ID
 
   if (apiKey === undefined) {
-    console.warn("Missing TMDB_API_KEY, skip fetching movies.")
+    console.warn("Missing TMDB_API_KEY, skip fetching Movie favorites.")
     return []
   }
 
@@ -37,7 +37,7 @@ export async function getFavoriteTv() {
   const sessionId = process.env.TMDB_SESSION_ID
 
   if (apiKey === undefined) {
-    console.warn("Missing TMDB_API_KEY, skip fetching movies.")
+    console.warn("Missing TMDB_API_KEY, skip fetching TV favorites.")
     return []
   }
 

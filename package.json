@@ -1,6 +1,6 @@
 {
   "name": "sanyamkapoor.com",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -8,10 +8,11 @@
     "fmt": "prettier --write \"{api,app}/**/*.{js,css}\" *.config.js",
     "lint": "next lint",
     "start": "next start",
-    "stork": "node api/stork.js && stork build --input public/index.toml --output public/index.st && rm public/index.toml"
+    "stork": "node api/stork.js && stork build --input public/index.toml --output public/index.st && rm public/index.toml",
+    "vercel": "vercel pull --yes --environment=production --token=${VERCEL_TOKEN} && vercel build --prod --token=${VERCEL_TOKEN} && vercel deploy --prebuilt --prod --token=${VERCEL_TOKEN}"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.21.3",
+    "@clerk/nextjs": "^4.21.8",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
@@ -23,7 +24,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.3.2",
-    "unist-util-visit": "^4.1.2"
+    "unist-util-visit": "^4.1.2",
+    "vercel": "^30.2.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
@@ -41,7 +43,7 @@
     "rehype-external-links": "^2.1.0",
     "rehype-figure": "^1.0.1",
     "rehype-katex": "^6.0.3",
-    "rehype-pretty-code": "^0.9.8",
+    "rehype-pretty-code": "^0.9.9",
     "rehype-raw": "^6.1.1",
     "rehype-slug": "^5.1.0",
     "remark-emoji": "^3.1.2",
