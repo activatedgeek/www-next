@@ -11,7 +11,7 @@ export default function PageList({ title, pages }) {
           {pages.map(({ title: _t, uri, area, updated }, _i) => (
             <tr key={_i}>
               <td className="w-20 md:w-24">
-                <span className="text-sm text-slate-500">
+                <span className="text-slate-500">
                   {format(new Date(updated), "MMM yyyy")}
                 </span>
               </td>
