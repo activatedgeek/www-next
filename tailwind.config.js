@@ -1,4 +1,5 @@
 import colors from "tailwindcss/colors"
+import defaultTheme from "tailwindcss/defaultTheme"
 
 module.exports = {
   content: [
@@ -11,20 +12,28 @@ module.exports = {
       colors: {
         link: colors.blue[600],
       },
+      fontFamily: {
+        sans: ["var(--font-assistant)", ...defaultTheme.fontFamily.sans],
+        serif: ["var(--font-ss4)", ...defaultTheme.fontFamily.serif],
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
             h1: {
-              fontFamily: "serif",
+              fontFamily: "var(--font-ss4)",
+              fontWeight: theme("fontWeight.semibold"),
             },
             h2: {
-              fontFamily: "serif",
+              fontFamily: "var(--font-ss4)",
+              fontWeight: theme("fontWeight.medium"),
             },
             h3: {
-              fontFamily: "serif",
+              fontFamily: "var(--font-ss4)",
+              fontWeight: theme("fontWeight.medium"),
             },
             h4: {
-              fontFamily: "serif",
+              fontFamily: "var(--font-ss4)",
+              fontWeight: theme("fontWeight.medium"),
             },
             summary: {
               cursor: "pointer",

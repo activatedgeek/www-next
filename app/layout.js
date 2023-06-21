@@ -1,4 +1,5 @@
 import Script from "next/script"
+import { Assistant, Source_Serif_4 } from "next/font/google"
 import { ClerkProvider } from "@clerk/nextjs"
 import "katex/dist/katex.min.css"
 import "@fortawesome/fontawesome-svg-core/styles.css"
@@ -9,6 +10,18 @@ import "./layout.css"
 import { commonMetadata } from "@/api/metadata"
 import Header from "./header"
 import Footer from "./footer"
+
+const sansFont = Assistant({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-assistant",
+})
+
+const serifFont = Source_Serif_4({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-ss4",
+})
 
 export const metadata = commonMetadata
 
@@ -26,7 +39,7 @@ export default function Layout({ children }) {
         },
       }}
     >
-      <html lang="en">
+      <html lang="en" className={`${sansFont.variable} ${serifFont.variable}`}>
         <Script
           data-goatcounter={`https://${process.env.GC_CODE}.goatcounter.com/count`}
           async

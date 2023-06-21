@@ -5,7 +5,7 @@ button.stork-close-button {
   @apply hidden;
 }
 div.stork-message {
-  @apply text-gray-500;
+  @apply text-slate-500;
 }
 ul.stork-results {
   @apply p-0;
