@@ -31,7 +31,7 @@ export default function Footer() {
   const { scholar, github, yc, linkedin, stackoverflow, twitter, code } = social
 
   return (
-    <div className="mx-auto mt-6 border-t-2 border-slate-300 p-6 max-w-3xl sm:px-9 lg:max-w-4xl lg:px-12 xl:max-w-6xl text-slate-500">
+    <div className="text-slate-500 border-t-2 border-slate-200 mx-auto p-3 max-w-2xl sm:px-5 lg:max-w-3xl lg:px-7 xl:max-w-4xl">
       <div className="flex justify-center text-xl">
         <IconLink title="Archive" icon={faNoteSticky} href="/notes" />
         <IconLink title="Archive" icon={faArchive} href="/db" />

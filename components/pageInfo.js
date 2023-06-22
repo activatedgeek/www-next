@@ -31,7 +31,7 @@ export default function PageInfo({ title, description, date, updated, area }) {
           <AreaLink area={area} />
         </div>
       </div>
-      <hr className="!mt-1 !mb-6 border-b border-1 border-slate-300" />
+      <hr className="!mt-1 !mb-6 border-b border-slate-300" />
     </>
   )
 }
