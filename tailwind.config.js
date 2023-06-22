@@ -35,15 +35,18 @@ module.exports = {
               fontFamily: "var(--font-ss4)",
               fontWeight: theme("fontWeight.medium"),
             },
-            summary: {
-              cursor: "pointer",
+            details: {
+              display: "inline-block",
+              maxWidth: theme("maxWidth.full"),
               borderWidth: theme("borderWidth.1"),
-              borderRadius: theme("borderRadius.md"),
-              boxShadow: theme("boxShadow.sm"),
+              borderRadius: theme("borderRadius.lg"),
               paddingLeft: theme("padding.4"),
               paddingRight: theme("padding.4"),
-              paddingTop: theme("padding.2"),
-              paddingBottom: theme("padding.2"),
+              paddingTop: theme("padding.1"),
+              paddingBottom: theme("padding.1"),
+            },
+            summary: {
+              cursor: "pointer",
             },
             figcaption: {
               textAlign: "center",
@@ -51,7 +54,7 @@ module.exports = {
             img: {
               marginLeft: "auto",
               marginRight: "auto",
-              borderRadius: theme("borderRadius.md"),
+              borderRadius: theme("borderRadius.lg"),
               boxShadow: theme("boxShadow.md"),
             },
             a: {
@@ -63,7 +66,7 @@ module.exports = {
               fontWeight: "normal",
             },
             pre: {
-              borderWidth: theme("borderWidth.8"),
+              borderWidth: theme("borderWidth.4"),
               borderRadius: theme("borderRadius.md"),
               boxShadow: theme("boxShadow.md"),
             },
@@ -73,11 +76,14 @@ module.exports = {
             "section.footnotes": {
               borderTopWidth: theme("borderWidth.1"),
               padding: theme("padding.3"),
-              backgroundColor: theme("colors.zinc.50"),
+              backgroundColor: theme("colors.gray.50"),
             },
             "p.hint": {
-              borderRadius: theme("borderRadius.md"),
-              padding: theme("padding.2"),
+              borderRadius: theme("borderRadius.lg"),
+              paddingTop: theme("padding.2"),
+              paddingBottom: theme("padding.2"),
+              paddingLeft: theme("padding.4"),
+              paddingRight: theme("padding.4"),
             },
             "p.hint.tip": {
               backgroundColor: theme("colors.green.100"),

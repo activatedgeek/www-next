@@ -11,7 +11,7 @@ ul.stork-results {
   @apply p-0;
 }
 li.stork-result {
-  @apply border-8 p-4 rounded;
+  @apply border-4 p-4 rounded;
 }
 div.stork-title > p {
   @apply font-serif text-2xl my-0;
@@ -20,7 +20,7 @@ div.stork-excerpt-container {
   @apply p-4;
 }
 div.stork-excerpt > p {
-  @apply text-neutral-600;
+  @apply text-gray-500;
 }
 li.stork-result::marker {
   content: none;

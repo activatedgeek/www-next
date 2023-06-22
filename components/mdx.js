@@ -55,11 +55,62 @@ export async function getMDXOptions() {
       ],
       (await import("rehype-katex")).default,
       // [
-      //   (await import('rehype-raw')).default,
+      //   (await import("rehype-raw")).default,
       //   {
-      //     passThrough: (await import('@mdx-js/mdx')).nodeTypes,
+      //     passThrough: (await import("@mdx-js/mdx")).nodeTypes,
       //   },
       // ],
+      [
+        (await import("rehype-toc")).default,
+        {
+          customizeTOC: (toc) => {
+            if (toc.children[0].children.length === 0) {
+              return false
+            }
+
+            const __ol2ul = function (tree) {
+              if (Array.isArray(tree)) {
+                return tree.map((t) => __ol2ul(t))
+              } else if (tree.tagName === "ol") {
+                return {
+                  ...tree,
+                  tagName: "ul",
+                  children: __ol2ul(tree.children),
+                }
+              } else if (tree.tagName === "li") {
+                return {
+                  ...tree,
+                  children: __ol2ul(tree.children)
+                }
+              }
+
+              return tree
+            }
+
+            toc.children = [
+              {
+                type: "element",
+                tagName: "details",
+                children: [
+                  {
+                  type: "element",
+                  tagName: "summary",
+                  properties: { className: "toc-summary" },
+                  children: [
+                    {
+                      type: "element",
+                      tagName: "h4",
+                      properties: { className: "toc-summary-text" },
+                      children: [{type: "text", value: "Table of Contents"}] }
+                  ]},
+                  ...__ol2ul(toc.children)
+                ]
+              }
+            ]
+            return toc
+          }
+        }
+      ],
     ],
   }
 }
