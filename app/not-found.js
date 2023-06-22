@@ -6,7 +6,7 @@ import Layout from "./(www)/kb/layout"
 import PageList from "@/components/pageList"
 
 export default async function NotFound() {
-  const latestPages = await getLatestPages(17)
+  const latestPages = await getLatestPages(23)
 
   return (
     <Layout>

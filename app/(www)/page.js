@@ -10,7 +10,7 @@ export async function generateMetadata() {
 }
 
 export default async function HomePage() {
-  const latestPages = await getLatestPages(17)
+  const latestPages = await getLatestPages(23)
   return (
     <Layout>
       {await Page({ params: { slug: "/" } })}
