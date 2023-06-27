@@ -21,9 +21,9 @@ export default async function Books() {
     <>
       <PageInfo {...frontmatter} />
       <p>My library of books, fetched from my account at LibraryThing.</p>
-      <div className="flex flex-row flex-wrap items-center">
+      <div className="grid gap-3 grid-cols-4 lg:grid-cols-5 text-center text-slate-500">
         {books.map(({ isbn, year, cover, title, rating }) => (
-          <div key={isbn} className="flex flex-col items-center text-sm">
+          <div key={isbn}>
             <a
               href={`https://www.librarything.com/search.php?search=${encodeURIComponent(
                 title
@@ -33,18 +33,11 @@ export default async function Books() {
             >
               <picture>
                 <source srcSet={cover} />
-                <img
-                  className="inline-block m-3"
-                  src={cover}
-                  alt={title}
-                  width={150}
-                  height={300}
-                  loading="lazy"
-                />
+                <img className="!my-0" src={cover} alt={title} loading="lazy" />
               </picture>
             </a>
             <Rating value={rating} />
-            <span>({year})</span>
+            <p className="!my-1">({year})</p>
           </div>
         ))}
       </div>
