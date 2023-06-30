@@ -28,39 +28,6 @@ export async function getMDXOptions() {
     rehypePlugins: [
       (await import("rehype-slug")).default,
       [
-        (await import("rehype-autolink-headings")).default,
-        {
-          behavior: "append",
-          properties: {
-            ariaLabel: "Link to this section",
-            className: "inline-block ml-2",
-          },
-          content: link(),
-        },
-      ],
-      [
-        (await import("rehype-external-links")).default,
-        {
-          target: "_blank",
-          rel: ["nofollow", "noopener", "noreferrer"],
-        },
-      ],
-      (await import("rehype-figure")).default,
-      [
-        (await import("rehype-pretty-code")).default,
-        {
-          theme: "min-light",
-          keepBackground: true,
-        },
-      ],
-      (await import("rehype-katex")).default,
-      // [
-      //   (await import("rehype-raw")).default,
-      //   {
-      //     passThrough: (await import("@mdx-js/mdx")).nodeTypes,
-      //   },
-      // ],
-      [
         (await import("rehype-toc")).default,
         {
           customizeTOC: (toc) => {
@@ -100,7 +67,7 @@ export async function getMDXOptions() {
                     {
                       type: "element",
                       tagName: "h4",
-                      properties: { className: "toc-summary-text" },
+                      properties: { className: "toc-summary-text", id: "table-of-contents" },
                       children: [{type: "text", value: "Table of Contents"}] }
                   ]},
                   ...__ol2ul(toc.children)
@@ -111,6 +78,39 @@ export async function getMDXOptions() {
           }
         }
       ],
+      [
+        (await import("rehype-autolink-headings")).default,
+        {
+          behavior: "append",
+          properties: {
+            ariaLabel: "Link to this section",
+            className: "inline-block ml-2",
+          },
+          content: link(),
+        },
+      ],
+      [
+        (await import("rehype-external-links")).default,
+        {
+          target: "_blank",
+          rel: ["nofollow", "noopener", "noreferrer"],
+        },
+      ],
+      (await import("rehype-figure")).default,
+      [
+        (await import("rehype-pretty-code")).default,
+        {
+          theme: "min-light",
+          keepBackground: true,
+        },
+      ],
+      (await import("rehype-katex")).default,
+      // [
+      //   (await import("rehype-raw")).default,
+      //   {
+      //     passThrough: (await import("@mdx-js/mdx")).nodeTypes,
+      //   },
+      // ],
     ],
   }
 }
