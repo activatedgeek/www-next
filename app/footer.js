@@ -7,7 +7,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import {
   faGithub,
-  faYCombinator,
   faLinkedin,
   faStackOverflow,
   faTwitter,
@@ -46,12 +45,6 @@ export default function Footer() {
           icon={faGithub}
           color="rgb(27,31,35)"
           href={github}
-        />
-        <IconLink
-          title="Hacker News"
-          icon={faYCombinator}
-          color="rgb(251,78,9)"
-          href={yc}
         />
         <IconLink
           title="LinkedIn"

@@ -13,12 +13,11 @@ export const creator = "Sanyam Kapoor"
 export const publisher = "sanyamkapoor.com"
 
 export const social = {
-  scholar: "https://go.sanyamkapoor.com/pubs",
+  scholar: "https://www.semanticscholar.org/author/153936584",
   github: "https://github.com/activatedgeek",
-  yc: "https://news.ycombinator.com/user?id=activatedgeek",
   linkedin: "https://www.linkedin.com/in/sanyamkapoor",
   stackoverflow: "https://stackoverflow.com/users/2425365",
-  twitter: "https://twitter.com/snymkpr",
+  twitter: "https://twitter.com/psiyumm",
   code: "https://github.com/activatedgeek/www",
 }
 
