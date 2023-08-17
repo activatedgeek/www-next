@@ -40,7 +40,7 @@ export const areas = {
     bgColor: "!bg-purple-100",
     ringColor: "!ring-purple-500",
     textColor: "!text-purple-500",
-    emoji_code: "information_desk_person",
+    emoji_code: "adult",
   },
   phil: {
     label: "Philosophy",
