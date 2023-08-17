@@ -64,6 +64,11 @@ module.exports = {
             },
             blockquote: {
               fontWeight: "normal",
+              paddingLeft: theme("padding.4"),
+              paddingRight: theme("padding.2"),
+              borderRadius: theme("borderRadius.lg"),
+              borderLeftWidth: theme("borderWidth.4"),
+              borderBottomWidth: theme("borderWidth.1"),
             },
             pre: {
               borderWidth: theme("borderWidth.4"),
@@ -74,25 +79,24 @@ module.exports = {
               overflow: "auto",
             },
             "section.footnotes": {
-              borderTopWidth: theme("borderWidth.1"),
-              padding: theme("padding.3"),
-              backgroundColor: theme("colors.gray.50"),
+              borderTopWidth: theme("borderWidth.2"),
+              padding: theme("padding.8"),
             },
             "p.hint": {
               borderRadius: theme("borderRadius.lg"),
-              paddingTop: theme("padding.2"),
-              paddingBottom: theme("padding.2"),
+              borderWidth: theme("borderWidth.1"),
+              borderLeftWidth: theme("borderWidth.4"),
+              padding: theme("padding.2"),
               paddingLeft: theme("padding.4"),
-              paddingRight: theme("padding.4"),
             },
             "p.hint.tip": {
-              backgroundColor: theme("colors.green.100"),
+              borderColor: theme("colors.blue.400"),
             },
             "p.hint.warn": {
-              backgroundColor: theme("colors.yellow.100"),
+              borderColor: theme("colors.yellow.400"),
             },
             "p.hint.error": {
-              backgroundColor: theme("colors.red.100"),
+              borderColor: theme("colors.red.400"),
             },
           },
         },

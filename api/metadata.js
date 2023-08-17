@@ -13,12 +13,15 @@ export const creator = "Sanyam Kapoor"
 export const publisher = "sanyamkapoor.com"
 
 export const social = {
+  gscholar:
+    "https://scholar.google.com/citations?hl=en&user=al_1n-sAAAAJ&view_op=list_works&sortby=pubdate",
   scholar: "https://www.semanticscholar.org/author/153936584",
   github: "https://github.com/activatedgeek",
   linkedin: "https://www.linkedin.com/in/sanyamkapoor",
   stackoverflow: "https://stackoverflow.com/users/2425365",
   twitter: "https://twitter.com/psiyumm",
   code: "https://github.com/activatedgeek/www",
+  yc: "https://news.ycombinator.com/user?id=activatedgeek",
 }
 
 export const commonMetadata = {

@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faUserGraduate,
+  faGraduationCap,
   faCode,
   faArchive,
   faNoteSticky,
@@ -9,7 +10,8 @@ import {
   faGithub,
   faLinkedin,
   faStackOverflow,
-  faTwitter,
+  faXTwitter,
+  faHackerNewsSquare,
 } from "@fortawesome/free-brands-svg-icons"
 
 import { creator, social } from "@/api/metadata"
@@ -27,39 +29,60 @@ const IconLink = ({ title, icon, href, color }) => (
 )
 
 export default function Footer() {
-  const { scholar, github, yc, linkedin, stackoverflow, twitter, code } = social
+  const {
+    gscholar,
+    scholar,
+    github,
+    yc,
+    linkedin,
+    stackoverflow,
+    twitter,
+    code,
+  } = social
 
   return (
     <div className="text-slate-500 border-t-2 border-slate-200 mx-auto p-3 max-w-2xl sm:px-5 lg:max-w-3xl lg:px-7 xl:max-w-4xl">
       <div className="flex justify-center text-xl">
         <IconLink
+          title="Google Scholar"
+          icon={faGraduationCap}
+          color="#4d90fe"
+          href={gscholar}
+        />
+        <IconLink
           title="Semantic Scholar"
           icon={faUserGraduate}
-          color="rgb(239,202,77)"
+          color="#f4d35e"
           href={scholar}
         />
         <IconLink
           title="Github"
           icon={faGithub}
-          color="rgb(27,31,35)"
+          color="#24292f"
           href={github}
+        />
+        <IconLink
+          title="Hacker News"
+          icon={faHackerNewsSquare}
+          color="#ff6600"
+          href={yc}
         />
         <IconLink
           title="LinkedIn"
           icon={faLinkedin}
-          color="rgb(14,79,180)"
+          color="#0a66c2"
           href={linkedin}
         />
         <IconLink
           title="StackOverflow"
           icon={faStackOverflow}
-          color="rgb(239,107,29)"
+          color="#f48225"
           href={stackoverflow}
         />
         <IconLink
           title="Twitter"
-          icon={faTwitter}
-          color="rgb(29,142,238)"
+          icon={faXTwitter}
+          color="#0f1419"
           href={twitter}
         />
       </div>
