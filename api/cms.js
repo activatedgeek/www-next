@@ -1,9 +1,4 @@
-import fs from "fs/promises"
-import { cache } from "react"
-import { globby } from "globby"
-import GithubSlugger from "github-slugger"
-import matter from "gray-matter"
-
+import { getAllRawPages } from "@/api/kb"
 import { baseAuthor } from "@/api/metadata"
 
 export const areas = {
@@ -72,59 +67,13 @@ export const areas = {
   },
 }
 
-export const getAllPages = cache(async function () {
-  const baseDir = process.env.WWW_KB_DIR
-  if (!baseDir) {
-    throw new Error("Missing WWW_KB_DIR environment variable.")
-  }
-
-  const rawPaths = await globby([baseDir], {
-    expandDirectories: { extensions: ["md"] },
-  })
-
-  const slugger = new GithubSlugger()
-  let allPages = await Promise.all(
-    rawPaths.map(async (filePath) => {
-      const rawString = await fs.readFile(filePath)
-      const {
-        data: {
-          title,
-          description,
-          date,
-          updated: _updated,
-          area,
-          authors: _authors,
-          slug: _slug,
-          internal: _internal,
-        },
-      } = matter(rawString)
-      const slug = _slug ? _slug : slugger.slug(title)
-      const internal = _internal ? Boolean(_internal) : false
-      const authors = _authors ? [baseAuthor, ..._authors] : [baseAuthor]
-      const uri = slug.startsWith("/")
-        ? slug
-        : `/${internal ? "notes" : "kb"}/${slug}`
-      return {
-        filePath,
-        title,
-        description,
-        authors,
-        area,
-        slug,
-        uri,
-        date: new Date(date),
-        updated: new Date(_updated || date),
-        internal,
-      }
-    })
-  )
-
-  allPages.sort(({ updated: a }, { updated: b }) => {
-    return b - a
-  })
-
-  return allPages
-})
+export async function getAllPages() {
+  const allRawPages = await getAllRawPages()
+  return allRawPages.map(({ authors, ...attrs }) => ({
+    ...attrs,
+    authors: [baseAuthor, ...authors],
+  }))
+}
 
 export async function getAllPublicPages() {
   const allPages = await getAllPages()
