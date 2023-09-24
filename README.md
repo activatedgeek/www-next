@@ -15,7 +15,6 @@ For authenticated routes:
 Optional environment variables:
 - `LIBRARYTHING_USERID`: LibraryThing User ID for use with the [API](https://wiki.librarything.com/index.php/LibraryThing_JSON_Books_API).
 - `GC_CODE`: [GoatCounter](https://www.goatcounter.com) code for analytics.
-- `TMDB_API_KEY` / `TMDB_SESSION_ID`: API key and session ID for [TMDb](https://developers.themoviedb.org/3/getting-started/introduction) to fetch Movie and TV favorites.
 
 ### Deploying to Vercel
 
