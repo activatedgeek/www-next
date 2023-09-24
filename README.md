@@ -13,7 +13,6 @@ For authenticated routes:
 - `CLERK_SECRET_KEY`: API secret key for [Clerk](https://clerk.com/).
 
 Optional environment variables:
-- `LIBRARYTHING_USERID`: LibraryThing User ID for use with the [API](https://wiki.librarything.com/index.php/LibraryThing_JSON_Books_API).
 - `GC_CODE`: [GoatCounter](https://www.goatcounter.com) code for analytics.
 
 ### Deploying to Vercel

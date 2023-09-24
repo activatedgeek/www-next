@@ -1,7 +1,7 @@
 import { authMiddleware } from "@clerk/nextjs";
 
 export default authMiddleware({
-  publicRoutes: [/^\/((db|kb|library|search)(\/.*)?)?$/],
+  publicRoutes: [/^\/((db|kb|search)(\/.*)?)?$/],
 });
 
 export const config = {
