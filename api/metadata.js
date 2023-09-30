@@ -32,6 +32,7 @@ export const commonMetadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  themeColor: "#3b82f6",
   metadataBase: new URL(baseUrl),
   creator,
   publisher,
