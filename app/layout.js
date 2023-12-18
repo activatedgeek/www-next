@@ -7,7 +7,7 @@ import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
 import "./layout.css"
-import { commonMetadata } from "@/api/metadata"
+import { commonMetadata, commonViewport } from "@/api/metadata"
 import Header from "./header"
 import Footer from "./footer"
 
@@ -23,6 +23,7 @@ const serifFont = Source_Serif_4({
   variable: "--font-ss4",
 })
 
+export const viewport = commonViewport
 export const metadata = commonMetadata
 
 export default function Layout({ children }) {

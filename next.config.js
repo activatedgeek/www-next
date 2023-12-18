@@ -21,6 +21,7 @@ module.exports = {
   },
   env: {
     NEXT_PUBLIC_CLERK_SIGN_IN_URL: "/login",
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: process.env.CLERK_PUBLISHABLE_KEY,
   },
   eslint: {
     dirs: ["api", "app", "components"],

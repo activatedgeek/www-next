@@ -9,7 +9,7 @@ See details on the stack [here](https://sanyamkapoor.com/kb/the-stack).
 - `WWW_KB_DIR`: Path to Markdown/MDX files.
 
 For authenticated routes:
-- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`: API publishable key for [Clerk](https://clerk.com/).
+- `CLERK_PUBLISHABLE_KEY`: API publishable key for [Clerk](https://clerk.com/).
 - `CLERK_SECRET_KEY`: API secret key for [Clerk](https://clerk.com/).
 
 Optional environment variables:

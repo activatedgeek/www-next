@@ -32,7 +32,6 @@ export const commonMetadata = {
   icons: {
     icon: "/favicon.svg",
   },
-  themeColor: "#3b82f6",
   metadataBase: new URL(baseUrl),
   creator,
   publisher,
@@ -40,6 +39,10 @@ export const commonMetadata = {
     card: "summary",
     creator: `@${social.twitter.split("/").slice(-1)}`,
   },
+}
+
+export const commonViewport = {
+  themeColor: "#3b82f6",
 }
 
 export function generateMetadataFromPageInfo(pageInfo) {

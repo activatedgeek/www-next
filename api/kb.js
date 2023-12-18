@@ -12,8 +12,8 @@ async function getAllRawPages() {
     throw new Error("Missing WWW_KB_DIR environment variable.")
   }
 
-  const rawPaths = await globby([baseDir], {
-    expandDirectories: { extensions: ["md"] },
+  const rawPaths = await globby(baseDir, {
+    expandDirectories: { files: ["*.md"] },
   })
 
   let allRawPages = await Promise.all(
