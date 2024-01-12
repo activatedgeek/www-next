@@ -12,7 +12,7 @@
     "vercel": "vercel pull --yes --environment=production --token=${VERCEL_TOKEN} && vercel build --prod --token=${VERCEL_TOKEN} && vercel deploy --prebuilt --prod --token=${VERCEL_TOKEN}"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.28",
+    "@clerk/nextjs": "^4.29",
     "@fortawesome/fontawesome-svg-core": "^6.5",
     "@fortawesome/free-brands-svg-icons": "^6.5",
     "@fortawesome/free-solid-svg-icons": "^6.5",
