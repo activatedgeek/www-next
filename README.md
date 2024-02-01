@@ -13,7 +13,7 @@ For authenticated routes:
 - `CLERK_SECRET_KEY`: API secret key for [Clerk](https://clerk.com/).
 
 Optional environment variables:
-- `GC_CODE`: [GoatCounter](https://www.goatcounter.com) code for analytics.
+- `GOATCOUNTER_URL`: [GoatCounter](https://www.goatcounter.com) code for analytics. e.g. `<code>.goatcounter.com`
 
 ### Deploying to Vercel
 

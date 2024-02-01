@@ -41,9 +41,9 @@ export default function Layout({ children }) {
       }}
     >
       <html lang="en" className={`${sansFont.variable} ${serifFont.variable}`}>
-        {process.env.GC_CODE ? (
+        {process.env.GOATCOUNTER_URL ? (
           <Script
-            data-goatcounter={`https://${process.env.GC_CODE}.goatcounter.com/count`}
+            data-goatcounter={`https://${process.env.GOATCOUNTER_URL}/count`}
             async
             src="//gc.zgo.at/count.js"
           />
